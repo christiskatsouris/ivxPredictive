@@ -22,6 +22,6 @@ Phillips, P. C., & Magdalinos, T. (2009). Econometric inference in the vicinity 
 
 # Notes
 
-1. The implementation of the original (current) IVX instrumentation method proposed by [Phillips and Magdalinos (2009)](https://ideas.repec.org/p/skb/wpaper/cofie-06-2009.html), can be found in the incredibly helpful [ivx](https://github.com/kvasilopoulos/ivx) R package of [Kostas Vasilopoulos](https://github.com/kvasilopoulos).
+1. The implementation of the original (current) IVX instrumentation method proposed by [Phillips and Magdalinos (2009)](https://ideas.repec.org/p/skb/wpaper/cofie-06-2009.html), can be found in the R package [ivx](https://github.com/kvasilopoulos/ivx) developed by [Kostas Vasilopoulos](https://github.com/kvasilopoulos).
 
 
