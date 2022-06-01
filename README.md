@@ -1,5 +1,5 @@
 # ivxPredictive : Unified Inference with General Autoregressive Roots
 
-Summary: This package aims to implement robust statistical inference for predictive regressions across the spectrum of autoregressive regimes as defined in the paper of Katsouris C. (working paper, 2022). Specifically, the framework extends the original IVX instrumentation of Magdalinos and Phillips (2009) and Kostakis, Magdalinos and Stamatogiannis (2015) to a more general autoregressive dependence.  
+Summary: This package aims to implement robust statistical inference for predictive regressions across the spectrum of autoregressive regimes as defined in the paper of Katsouris C. (working paper, 2022) (see, also [Katsouris, C. (2022)](https://arxiv.org/abs/2204.02073). Specifically, the framework extends the original IVX instrumentation of Magdalinos and Phillips (2009) and [Kostakis, Magdalinos and Stamatogiannis (2015)](https://academic.oup.com/rfs/article/28/5/1506/1867633?login=true)  to a more general autoregressive dependence.  
 
-[I'm an inline-style link](https://www.google.com) 
+
