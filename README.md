@@ -12,7 +12,10 @@ Katsouris, C. (2022). Asymptotic Theory for Moderate Deviations from the Unit Bo
 
 Kostakis, A., Magdalinos, T., & Stamatogiannis, M. P. (2015). Robust econometric inference for stock return predictability. The Review of Financial Studies, 28(5), 1506-1553.
 
-Phillips, Peter CB, and Tassos Magdalinos. "Econometric inference in the vicinity of unity." Singapore Management University, CoFie Working Paper 7 (2009).
-
 Lee, J. H. (2016). Predictive quantile regression with persistent covariates: IVX-QR approach. Journal of Econometrics, 192(1), 105-118.
+
+Magdalinos, T., & Phillips, P. C. (2009). Limit theory for cointegrated systems with moderately integrated and moderately explosive regressors. Econometric Theory, 25(2), 482-526.
+
+Phillips, P. C., & Magdalinos, T. (2009). Econometric inference in the vicinity of unity. Singapore Management University, CoFie Working Paper, 7.
+
 
