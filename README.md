@@ -24,12 +24,14 @@ Magdalinos, T., & Phillips, P. C. (2009). "Limit theory for cointegrated systems
 
 Phillips, P. C., & Magdalinos, T. (2009). "Econometric inference in the vicinity of unity". Singapore Management University, CoFie Working Paper, 7.
 
-## Notes
+# Notes
 
 1. The implementation of the original (current) IVX instrumentation method proposed by [Phillips and Magdalinos (2009)](https://ideas.repec.org/p/skb/wpaper/cofie-06-2009.html), can be found in the R package [ivx](https://github.com/kvasilopoulos/ivx) developed by [Kostas Vasilopoulos](https://github.com/kvasilopoulos).
 
-## Declarations
+# Declarations
 
-The author declares no conflicts of interest.
+The author declares no conflicts of interest. 
+
+In particular, the author declares that has no affiliations with or involvement in any organization or entity with any financial interest (such as honoraria; educational grants; participation in speakers’ bureaus; membership, employment, consultancies, stock ownership, or other equity interest; and expert testimony or patent-licensing arrangements), or non-financial interest (such as personal or professional relationships, affiliations, knowledge or beliefs) in the subject matter or materials discussed in the manuscript and implemented in the R package.
 
 
