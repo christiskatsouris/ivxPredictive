@@ -6,7 +6,7 @@ Description: The package aims to implement robust statistical inference methodol
 
 ## Installation (under development) 
 
-The R package will be able to be installed from Github.
+The R package ‘ivxPredictive’ will be able to be installed from Github.
 
 ## Key References
 
