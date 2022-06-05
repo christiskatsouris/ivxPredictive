@@ -20,11 +20,11 @@ Lee, J. H. (2016). "Predictive quantile regression with persistent covariates: I
 
 Magdalinos, T., & Petrova, K. (2022). "Uniform and distribution-free inference with general autoregressive processes". University of Southampton, Working paper. 
 
-Magdalinos, T., & Phillips, P. C. (2020). "Econometric inference in matrix vicinities of unity and stationarity". University of Southampton, Working paper.  
+Magdalinos, T., & Phillips, P. C. B. (2020). "Econometric inference in matrix vicinities of unity and stationarity". University of Southampton, Working paper.  
 
-Magdalinos, T., & Phillips, P. C. (2009). "Limit theory for cointegrated systems with moderately integrated and moderately explosive regressors". Econometric Theory, 25(2), 482-526.
+Magdalinos, T., & Phillips, P. C. B. (2009). "Limit theory for cointegrated systems with moderately integrated and moderately explosive regressors". Econometric Theory, 25(2), 482-526.
 
-Phillips, P. C., & Magdalinos, T. (2009). "Econometric inference in the vicinity of unity". Singapore Management University, CoFie Working Paper, 7.
+Phillips, P. C. B., & Magdalinos, T. (2009). "Econometric inference in the vicinity of unity". Singapore Management University, CoFie Working Paper, 7.
 
 ## Notes
 
