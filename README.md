@@ -8,6 +8,16 @@ Description: The package aims to implement robust statistical inference methodol
 
 The R package ‘ivxPredictive’ will be able to be installed from Github.
 
+## Usage 
+
+```R
+
+# After development the package will be able to be installed using
+install.packages("ivxPredictive")
+library("ivxPredictive")
+
+```
+
 ## Key References
 
 Katsouris, C. (2022b). "Asymptotic Theory for Moderate Deviations from the Unit Boundary in Quantile Autoregression and Predictive Regression". University of Southampton, Working paper.  
@@ -33,6 +43,10 @@ Phillips, P. C. B., & Magdalinos, T. (2009). "Econometric inference in the vicin
 2. The Matlab code of the original IVX instrumentation method can be found on the website of [Michalis Stamatogiannis](https://sites.google.com/site/mpstamatogiannis/home).
 
 3. The author would like to thank [Ji Hyung Lee](https://economics.illinois.edu/profile/jihyung) for kindly sharing the Matlab code for the implementation of the original IVX instrumentation method for the quantile predictive regression. 
+
+## Code of Coduct
+
+Please note that the ‘ivxPredictive’ project will be released with a Contributor Code of Coduct (under construction). By contributing to this project, you agree to abide by its terms.
 
 ## Declarations
 
