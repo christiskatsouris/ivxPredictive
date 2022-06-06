@@ -15,11 +15,10 @@ ivx_fit <- function(y, x, h = 1)
   cnames <- colnames(xt)
   
   nr <- NROW(xt)
-  
   nn <- NROW(xlag)
   l  <- NCOL(xlag)
   
-  lm1 <- lm(yt ~ xt)
+  lm1  <- lm(yt ~ xt)
   Aols <- coefficients(lm1)
   
   #epshat contains the residuals of the predictive regression
@@ -74,7 +73,6 @@ ivx_fit <- function(y, x, h = 1)
   Omegauu <- covu + uu + t(uu)
   
   q <- matrix(0, m, l)
-  
   for (i in 1:m) 
   {
     p <- matrix(0, nn - i, l)
@@ -141,18 +139,13 @@ ivx_fit <- function(y, x, h = 1)
   
   # Computation of the Aivx matrix 
   Aivx <- t(Yt) %*% Z %*% pracma::pinv(t(Xt) %*% Z)
-  
-  # set(Aivc) <- names(coefficients(Aols))
   meanzK <- colMeans(ZK)
-  
-  FM <- covepshat - t(Omegaeu) %*% pracma::inv(Omegauu) %*% Omegaeu
-  
-  # meanzK drop to column dimension so I have to use tcross instead of cross
+  FM     <- covepshat - t(Omegaeu) %*% pracma::inv(Omegauu) %*% Omegaeu
+   
   M <- crossprod(ZK) * covepshat[1] - kronecker(n * tcrossprod(meanzK), FM)
   H <- matrix(1, l, l)
   Q <- pinv(t(Z) %*% Xt) %*% M %*% pinv(t(Xt) %*% Z)
   
-  # Wivx <- t(H * t(Aivx)) %*% pracma::pinv(Q) %*% (H * t(Aivx))
   Wivx        <- Aivx %*% pracma::pinv(Q) %*% t(Aivx)
   Wivx_pvalue <- 1 - pchisq(Wivx, l)
   WivxInd     <- Aivx / diag(Q)^(1/2) # t(diag(Q)^(1/2))
