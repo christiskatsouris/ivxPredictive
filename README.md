@@ -6,8 +6,12 @@
 
 This R package (under development) aims to implement robust econometric inference methodologies for predictive regression models with autoregressive roots across the spectrum of stationarity and nonstationarity as defined in the studies of [Phillips and Magdalinos (2009)](https://ideas.repec.org/p/skb/wpaper/cofie-06-2009.html) and  Magdalinos and Phillips (2020). In particular, our R implementation extends the original IVX instrumentation of [Phillips and Magdalinos (2009)](https://ideas.repec.org/p/skb/wpaper/cofie-06-2009.html) and [Kostakis, Magdalinos and Stamatogiannis (2015)](https://academic.oup.com/rfs/article/28/5/1506/1867633?login=true) to a more general autoregressive dependence, for linear (parametric) functional forms of the predictive regression model, based on a conditional mean specification (see, Magdalinos and Petrova (2022)) as well as a conditional quantile specification (see, [Katsouris, C. (2022)](https://arxiv.org/abs/2204.02073)).  
 
+<p align="center">
+  
 <img src="https://github.com/christiskatsouris/ivxPredictive/blob/main/data/persistence.jpg" width="450"/>
 
+</p>  
+  
 ## Installation (under development) 
 
 The R package ‘ivxPredictive’ will be able to be installed from Github.
