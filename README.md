@@ -4,7 +4,7 @@
 
 ### Description 
 
-The proposed R package aims to implement robust statistical inference methodologies for predictive regressions across the spectrum of autoregressive regimes as defined in the paper of Phillips and Magdalinos (2009) and  Magdalinos and Phillips (2020). In particular, the proposed framework extends the original IVX instrumentation of [Phillips and Magdalinos (2009)](https://ideas.repec.org/p/skb/wpaper/cofie-06-2009.html) and [Kostakis, Magdalinos and Stamatogiannis (2015)](https://academic.oup.com/rfs/article/28/5/1506/1867633?login=true) to a more general autoregressive dependence for both linear (see, Magdalinos and Petrova (2022)) and conditional quantile specifications (see, [Katsouris, C. (2022)](https://arxiv.org/abs/2204.02073)).  
+The proposed R package aims to implement robust econometric inference methodologies for predictive regression models with autoregressive roots across the spectrum stationary and nonstationary properties as defined in the studies of [Phillips and Magdalinos (2009)](https://ideas.repec.org/p/skb/wpaper/cofie-06-2009.html) and  Magdalinos and Phillips (2020). In particular, the proposed R implementation extends the original IVX instrumentation of [Phillips and Magdalinos (2009)](https://ideas.repec.org/p/skb/wpaper/cofie-06-2009.html) and [Kostakis, Magdalinos and Stamatogiannis (2015)](https://academic.oup.com/rfs/article/28/5/1506/1867633?login=true) to a more general autoregressive dependence for both the cases of conditional mean specfifiecation (see, Magdalinos and Petrova (2022)) and the conditional quantile specification (see, [Katsouris, C. (2022)](https://arxiv.org/abs/2204.02073)).  
 
 ## Installation (under development) 
 
