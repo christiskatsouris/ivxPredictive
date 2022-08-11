@@ -8,7 +8,7 @@ This R package (under development) aims to implement robust econometric inferenc
 
 <p align="center">
   
-<img src="https://github.com/christiskatsouris/ivxPredictive/blob/main/data/persistence.jpg" width="450"/>
+<img src="https://github.com/christiskatsouris/ivxPredictive/blob/main/data/persistence.jpg" width="485"/>
 
 </p>  
   
