@@ -129,7 +129,10 @@ $\textbf{News:}$ The author will be joining the [University of Exeter Business S
 
 # Historical Background
 
-> "Standing on the shoulders of giants".
+> Standing on the shoulders of giants.
+> $\textit{"If"}$ 
+
+
 
 $\textbf{Aleksandr Lyapunov}$ (6 June 1857 – 3 November 1918) was a Russian mathematician, mechanician and physicist. Lyapunov is known for his development of the stability theory of a dynamical system, as well as for his many contributions to mathematical physics and probability theory. A major theme in Lyapunov's research was the stability of a rotating fluid mass with possible astronomical application. He contributed to several fields, including differential equations, potential theory, dynamical systems and probability theory. His main preoccupations were the stability of equilibria and the motion of mechanical systems, especially rotating fluid masses, and the study of particles under the influence of gravity. His work in the field of mathematical physics regarded the boundary value problem of the equation of Laplace. In the theory of potential, his work from 1897 On some questions connected with Dirichlet's problem clarified several important aspects of the theory. His work in this field is in close connection with the work of Steklov. Lyapunov developed many important approximation methods. His methods, which he developed in 1899, make it possible to define the stability of sets of ordinary differential equations. He created the modern theory of the stability of a dynamic system. In the theory of probability, he generalised the works of Chebyshev and Markov, and proved the Central Limit Theorem under more general conditions than his predecessors. The method of characteristic functions he used for the proof later found widespread use in probability theory (Source: Wikepedia).
 
