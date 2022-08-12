@@ -12,10 +12,11 @@ The R package 'ivxPredictive' (under development) implements robust econometric 
 
 </p>  
 
+We consider the following persistence classes:
    
-$\textbf{P.1}$  \textbf{\textit{nearly stable}} processes: 
+$\textbf{(P1): nearly stable} processes: 
 
-$$\text{if} \left( \theta_n \right)_{ n \in \mathbb{N} } \ \ \text{is such that} \ \zeta = - \infty \ \ \text{and it holds that} \ \ \theta_n \to | \theta | < 1$$.
+$$\text{if} \left( \theta_n \right)_{ n \in \mathbb{N} } \ \ \text{is such that} \ \zeta = - \infty \ \ \text{and it holds that} \ \ \theta_n \to | \theta | < 1.$$
     
   
 ### Methodology  
