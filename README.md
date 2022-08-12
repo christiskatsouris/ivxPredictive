@@ -66,6 +66,10 @@ library("ivxPredictive")
 
 ## References of IVX Variants
 
+- Demetrescu, M., Georgiev, I., Rodrigues, P. M., & Taylor, A. R. (2022). Extensions to IVX methods of inference for return predictability. Journal of Econometrics.
+
+- Hosseinkouchack, M., & Demetrescu, M. (2021). Finite-sample size control of IVX-based tests in predictive regressions. Econometric Theory, 37(4), 769-793.
+
 
 
 ## Notes
