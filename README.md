@@ -23,7 +23,7 @@ $\textbf{(P2): nearly unstable}$ processes:
 $$\text{if} \ \ \left( \theta_n \right)_{ n \in \mathbb{N} } \ \ \text{is such that} \ \ \zeta \equiv c \in \mathbb{R} \ \ \text{and it holds that} \ \ \theta_n \to \theta = 1.$$
 
     
-$\textbf{(P3): nearly unstable}$ processes:   
+$\textbf{(P3): nearly explosive}$ processes:   
 
 $$\text{if} \ \ \left( \theta_n \right)_{ n \in \mathbb{N} } \ \ \text{is such that} \ \ \zeta = + \infty \ \ \text{and it holds that} \ \ \theta_n \to | \theta | > 1.$$
 
