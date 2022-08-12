@@ -70,7 +70,7 @@ library("ivxPredictive")
 
 - Hosseinkouchack, M., & Demetrescu, M. (2021). Finite-sample size control of IVX-based tests in predictive regressions. Econometric Theory, 37(4), 769-793.
 
-
+- Yang, B., Long, W., & Yang, Z. (2022). Testing predictability of stock returns under possible bubbles (IVX-BUB). Journal of Empirical Finance.
 
 ## Notes
 
