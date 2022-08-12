@@ -86,7 +86,7 @@ In particular, the author declares that has no affiliations with or involvement 
 
 The author greatfully acknowledges financial support from Graduate Teaching Assistantships at the School of Economic, Social and Political Sciences of the University of Southampton as well as from the Vice-Chancellor's PhD Scholarship of the University of Southampton, for the duration of the academic years 2018 to 2021. Furthermore, the author gratefully acknowledges funding from Research Grants of interdisciplinary Centers of research excellence based at the University of Cyprus (UCY) as well as at the University College London (UCL).
 
-Part of the aspects implemented in the R package 'ivxPredictive', are discussed in the PhD thesis of this R package creator (Christis G. Katsouris) titled: "Aspects of Estimation and Inference for Predictive Regression Models", completed under the supervision of [Professor Anastasios Magdalinos](https://www.southampton.ac.uk/people/5x7sz7/professor-anastasios-magdalinos#supervision) and [Professor Jose Olmo](https://www.southampton.ac.uk/people/5xb29b/professor-jose-olmo).
+Part of the aspects implemented in the R package 'ivxPredictive', are discussed in the PhD thesis of this R package creator (Christis G. Katsouris) titled: "Aspects of Estimation and Inference for Predictive Regression Models", completed under the supervision of  [Professor Jose Olmo](https://www.southampton.ac.uk/people/5xb29b/professor-jose-olmo) and [Professor Anastasios Magdalinos](https://www.southampton.ac.uk/people/5x7sz7/professor-anastasios-magdalinos#supervision).
 
 # Historical Background
 
