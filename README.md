@@ -121,11 +121,11 @@ library("ivxPredictive")
 - Jansson, M., & Moreira, M. J. (2006). Optimal inference in regression models with nearly integrated regressors. Econometrica, 74(3), 681-714.
 
 
-## Code of Coduct
+# Code of Coduct
 
 Please note that the ‘ivxPredictive’ project will be released with a Contributor Code of Coduct (under construction). By contributing to this project, you agree to abide by its terms.
 
-## Declarations
+# Declarations
 
 The author declares no conflicts of interest. 
 
@@ -146,7 +146,7 @@ $\textbf{Harald Cramér}$ (25 September 1893 – 5 October 1985) was a Swedish m
 $\textbf{Charles Max Stein}$  (March 22, 1920 – November 24, 2016) was an American mathematical statistician and professor of statistics at Stanford University. 
 He received his Ph.D in 1947 at Columbia University with advisor Abraham Wald. He held faculty positions at Berkeley and the University of Chicago before moving permanently to Stanford in 1953. He is known for Stein's paradox in decision theory, which shows that ordinary least squares estimates can be uniformly improved when many parameters are estimated; for Stein's lemma, giving a formula for the covariance of one random variable with the value of a function of another when the two random variables are jointly normally distributed; and for Stein's method, a way of proving theorems such as the Central Limit Theorem that does not require the variables to be independent and identically distributed (Source: Wikepedia).
 
-## Remark: 
+### Remark: 
 
 In contrast to the ordinary least squares estimates, the opposite result seems to hold for the original IVX estimator, that is, it seems to not uniformly be improving when many parameters are estimated. The particular aspect, is currently an open research question in the literature which worths further investigation. 
 
