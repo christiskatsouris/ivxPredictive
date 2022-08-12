@@ -74,21 +74,21 @@ library("ivxPredictive")
 ## References of IVX Variants
 
 - Cai, Z., Chen, H., & Liao, X. (2022). A new robust inference for predictive quantile regression. Journal of Econometrics.
-
 - Demetrescu, M., Georgiev, I., Rodrigues, P. M., & Taylor, A. R. (2022). Extensions to IVX methods of inference for return predictability. Journal of Econometrics.
-
 - Demetrescu, M., & Rodrigues, P. M. (2020). Residual-augmented IVX predictive regression. Journal of Econometrics.
-
 - Hosseinkouchack, M., & Demetrescu, M. (2021). Finite-sample size control of IVX-based tests in predictive regressions. Econometric Theory, 37(4), 769-793.
-
 - Liu, Y., & Phillips, P. C. (2022). Robust inference with stochastic local unit root regressors in predictive regressions. Journal of Econometrics.
-
 - Ren, Y., Tu, Y., & Yi, Y. (2019). Balanced predictive regressions. Journal of Empirical Finance, 54, 118-142.
-
 - Yang, B., Long, W., & Yang, Z. (2022). Testing predictability of stock returns under possible bubbles (IVX-BUB). Journal of Empirical Finance.
-
 - Yang, B., Long, W., Peng, L., & Cai, Z. (2020). Testing the predictability of US housing price index returns based on an IVX-AR model (IVX-AR). Journal of the American Statistical Association, 115(532), 1598-1619.
 
+## Seminal Studies
+
+- Chan, N. H., & Wei, C. Z. (1987). Asymptotic inference for nearly nonstationary AR (1) processes. The Annals of Statistics, 1050-1063.
+- Phillips, P. C. B. (1987). Towards a unified asymptotic theory for autoregression. Biometrika, 74(3), 535-547.
+- Phillips, P. C., & Perron, P. (1988). Testing for a unit root in time series regression. Biometrika, 75(2), 335-346.
+- White, J. S. (1959). The limiting distribution of the serial correlation coefficient in the explosive case II. The Annals of Mathematical Statistics, 831-834.
+- White, J. S. (1958). The limiting distribution of the serial correlation coefficient in the explosive case. The Annals of Mathematical Statistics, 1188-1197.
 
 ## Notes
 
