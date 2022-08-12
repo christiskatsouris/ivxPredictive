@@ -131,7 +131,8 @@ $\textbf{News:}$ The author will be joining the [University of Exeter Business S
 
 > Standing on the shoulders of giants.
 > 
-> $\textit{''If I have been able to see further, it was only because I stood on the shoulders of giants"} - \text{Isaac Newton, 1676}.$ 
+> $\textit{''If I have been able to see further, it was only because I stood on the shoulders of giants."}$
+> $- \text{Isaac Newton, 1676}$ 
 
 
 
