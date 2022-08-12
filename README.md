@@ -95,4 +95,4 @@ He received his Ph.D in 1947 at Columbia University with advisor Abraham Wald. H
 
 ## Remark: 
 
-On the other hand in the case of the IVX estimator, the opposite result seems to hold, that is, it seems to not be uniformly improved when many parameters are estimated, which is an open research question and currently under examination by the author. 
+In contrast to the ordinary least squares estimates, the opposite result seems to hold for the IVX estimator, that is, it seems to not be uniformly be improving when many parameters are estimated. The particular aspect, is currently an open research question in the literature which worths further investigation. 
