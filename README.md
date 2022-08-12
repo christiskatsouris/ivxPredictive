@@ -87,3 +87,12 @@ In particular, the author declares that has no affiliations with or involvement 
 The author greatfully acknowledges financial support from Graduate Teaching Assistantships at the School of Economic, Social and Political Sciences of the University of Southampton as well as from the Vice-Chancellor's PhD Scholarship of the University of Southampton, for the duration of the academic years 2018 to 2021. Furthermore, the author gratefully acknowledges funding from Research Grants of interdisciplinary Centers of research excellence based at the University of Cyprus (UCY) as well as at the University College London (UCL).
 
 Part of the aspects implemented in the R package 'ivxPredictive', were discussed in the PhD thesis of this R package creator (Christis G. Katsouris) titled: "Aspects of Estimation and Inference for Predictive Regression Models".
+
+# Historical Background
+
+$\textbf{Charles Max Stein}$  (March 22, 1920 – November 24, 2016) was an American mathematical statistician and professor of statistics at Stanford University. 
+He received his Ph.D in 1947 at Columbia University with advisor Abraham Wald. He held faculty positions at Berkeley and the University of Chicago before moving permanently to Stanford in 1953. He is known for Stein's paradox in decision theory, which shows that ordinary least squares estimates can be uniformly improved when many parameters are estimated; for Stein's lemma, giving a formula for the covariance of one random variable with the value of a function of another when the two random variables are jointly normally distributed; and for Stein's method, a way of proving theorems such as the Central Limit Theorem that does not require the variables to be independent and identically distributed (Source: Wikepedia).
+
+## Remark: 
+
+On the other hand in the case of the IVX estimator, the opposite result seems to hold, that is, it seems to not be uniformly improved when many parameters are estimated, which is an open research question and currently under examination by the author. 
