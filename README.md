@@ -88,6 +88,8 @@ The author greatfully acknowledges financial support from Graduate Teaching Assi
 
 Part of the aspects implemented in the R package 'ivxPredictive', are discussed in the PhD thesis of this R package creator (Christis G. Katsouris) titled: "Aspects of Estimation and Inference for Predictive Regression Models", completed under the supervision of  [Professor Jose Olmo](https://www.southampton.ac.uk/people/5xb29b/professor-jose-olmo) and [Professor Anastasios Magdalinos](https://www.southampton.ac.uk/people/5x7sz7/professor-anastasios-magdalinos#supervision).
 
+News: The author will be joining the [University of Exeter Business School](http://business-school.exeter.ac.uk/) as a Visiting Lecturer in Economics (Education and Scholarship) at the Department of Economics in September 2022.
+
 # Historical Background
 
 $\textbf{Charles Max Stein}$  (March 22, 1920 – November 24, 2016) was an American mathematical statistician and professor of statistics at Stanford University. 
