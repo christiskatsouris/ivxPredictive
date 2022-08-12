@@ -130,7 +130,8 @@ $\textbf{News:}$ The author will be joining the [University of Exeter Business S
 # Historical Background
 
 > Standing on the shoulders of giants.
-> $\textit{"If"}$ 
+> 
+> $\textit{''If"}$ 
 
 
 
