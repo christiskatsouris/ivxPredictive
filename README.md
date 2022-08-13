@@ -106,6 +106,7 @@ library("ivxPredictive")
 ### 1970's
 
 - Dickey, D. A., & Fuller, W. A. (1979). Distribution of the estimators for autoregressive time series with a unit root. Journal of the American statistical association, 74(366a), 427-431.
+- Rao, M. M. (1978). Asymptotic distribution of an estimator of the boundary parameter of an unstable process. The Annals of Statistics, 185-190.
 
 ### 1980's
 
@@ -117,7 +118,6 @@ library("ivxPredictive")
 - Phillips, P. C. B. (1987). Towards a unified asymptotic theory for autoregression. Biometrika, 74(3), 535-547.
 - Phillips, P. C. B. (1988). Regression theory for near-integrated time series. Econometrica: Journal of the Econometric Society, 1021-1043.
 - Phillips, P. C. B. & Perron, P. (1988). Testing for a unit root in time series regression. Biometrika, 75(2), 335-346.
-- Rao, M. M. (1978). Asymptotic distribution of an estimator of the boundary parameter of an unstable process. The Annals of Statistics, 185-190.
 
 ### 1990's
 
