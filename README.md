@@ -72,8 +72,8 @@ library("ivxPredictive")
 ## References on IVX Variants:
 
 - Christou, C., Gupta, R., Hassapis, C., & Suleman, T. (2018). The role of economic uncertainty in forecasting exchange rate returns and realized volatility: Evidence from quantile predictive regressions. Journal of Forecasting, 37(7), 705-719.
-- Cai, Z., & Chang, S. Y. (2020). A new test on asset return predictability with structural breaks. University of Kansas. Working paper. 
 - Cai, Z., Chen, H., & Liao, X. (2022). A new robust inference for predictive quantile regression. Journal of Econometrics.
+- Cai, Z., & Chang, S. Y. (2020). A new test on asset return predictability with structural breaks. University of Kansas. Working paper. 
 - Demetrescu, M., Georgiev, I., Rodrigues, P. M., & Taylor, A. R. (2022). Extensions to IVX methods of inference for return predictability. Journal of Econometrics.
 - Demetrescu, M., & Rodrigues, P. M. (2020). Residual-augmented IVX predictive regression. Journal of Econometrics.
 - Hosseinkouchack, M., & Demetrescu, M. (2021). Finite-sample size control of IVX-based tests in predictive regressions. Econometric Theory, 37(4), 769-793.
