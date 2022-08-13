@@ -68,6 +68,7 @@ library("ivxPredictive")
 - Magdalinos, T., & Phillips, P. C. B. (2009). "Limit theory for cointegrated systems with moderately integrated and moderately explosive regressors". Econometric Theory, 25(2), 482-526.
 - Phillips, P. C. B., & Magdalinos, T. (2009). "Econometric inference in the vicinity of unity". Singapore Management University, CoFie Working paper, 7.
 - Phillips, P. C. B., & Magdalinos, T. (2007). Limit theory for moderate deviations from a unit root. Journal of Econometrics, 136(1), 115-130.
+- Chen, W. W., Deo, R. S., & Yi, Y. (2013). Uniform inference in predictive regression models. Journal of Business & Economic Statistics, 31(4), 525-533.
 
 ## References on IVX Variants:
 
