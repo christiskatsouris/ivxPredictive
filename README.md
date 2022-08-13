@@ -128,6 +128,7 @@ library("ivxPredictive")
 - Aue, A., & Horváth, L. (2007). A limit theorem for mildly explosive autoregression with stable errors. Econometric Theory, 23(2), 201-220.
 - Buchmann, B., & Chan, N. H. (2007). Asymptotic theory of least squares estimators for nearly unstable processes under strong dependence. The Annals of Statistics, 35(5), 2001-2017.
 - Jansson, M., & Moreira, M. J. (2006). Optimal inference in regression models with nearly integrated regressors. Econometrica, 74(3), 681-714.
+- Mikusheva, A. (2007). Uniform inference in autoregressive models. Econometrica, 75(5), 1411-1452.
 - Müller, U. K., & Elliott, G. (2003). Tests for unit roots and the initial condition. Econometrica, 71(4), 1269-1286.
 - Chen, W. W., Deo, R. S., & Yi, Y. (2013). Uniform inference in predictive regression models. Journal of Business & Economic Statistics, 31(4), 525-533.
 
