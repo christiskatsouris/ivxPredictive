@@ -114,6 +114,7 @@ library("ivxPredictive")
 ### 1980's
 
 - Cavanagh, C. (1985). Roots local to unity. Manuscript, Harvard University, Department of Economics.
+- Cumberland, W. G., & Sykes, Z. M. (1982). Weak convergence of an autoregressive process used in modeling population growth. Journal of Applied Probability, 19(2), 450-455.
 - Chan, N. H., & Wei, C. Z. (1987). Asymptotic inference for nearly nonstationary AR (1) processes. The Annals of Statistics, 1050-1063.
 - Chan, N. H. (1988). The parameter inference for nearly nonstationary time series. Journal of the American Statistical Association, 83(403), 857-862.
 - Dickey, D. A., & Fuller, W. A. (1981). Likelihood ratio statistics for autoregressive time series with a unit root. Econometrica: journal of the Econometric Society, 1057-1072.
