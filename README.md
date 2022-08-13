@@ -73,11 +73,13 @@ library("ivxPredictive")
 ## References on IVX Variants:
 
 - Cai, Z., Chen, H., & Liao, X. (2022). A new robust inference for predictive quantile regression. Journal of Econometrics.
+- Christou, C., Gupta, R., Hassapis, C., & Suleman, T. (2018). The role of economic uncertainty in forecasting exchange rate returns and realized volatility: Evidence from quantile predictive regressions. Journal of Forecasting, 37(7), 705-719.
 - Demetrescu, M., Georgiev, I., Rodrigues, P. M., & Taylor, A. R. (2022). Extensions to IVX methods of inference for return predictability. Journal of Econometrics.
 - Demetrescu, M., & Rodrigues, P. M. (2020). Residual-augmented IVX predictive regression. Journal of Econometrics.
 - Hosseinkouchack, M., & Demetrescu, M. (2021). Finite-sample size control of IVX-based tests in predictive regressions. Econometric Theory, 37(4), 769-793.
 - Liu, Y., & Phillips, P. C. (2022). Robust inference with stochastic local unit root regressors in predictive regressions. Journal of Econometrics.
 - Ren, Y., Tu, Y., & Yi, Y. (2019). Balanced predictive regressions. Journal of Empirical Finance, 54, 118-142.
+- Xu, K. L. (2020). Testing for multiple-horizon predictability: Direct regression based versus implication based. The Review of Financial Studies, 33(9), 4403-4443.
 - Yang, B., Long, W., & Yang, Z. (2022). Testing predictability of stock returns under possible bubbles (IVX-BUB). Journal of Empirical Finance.
 - Yang, B., Long, W., Peng, L., & Cai, Z. (2020). Testing the predictability of US housing price index returns based on an IVX-AR model (IVX-AR). Journal of the American Statistical Association, 115(532), 1598-1619.
 
