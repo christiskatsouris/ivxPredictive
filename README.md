@@ -71,8 +71,9 @@ library("ivxPredictive")
 
 ## References on IVX Variants:
 
-- Cai, Z., Chen, H., & Liao, X. (2022). A new robust inference for predictive quantile regression. Journal of Econometrics.
 - Christou, C., Gupta, R., Hassapis, C., & Suleman, T. (2018). The role of economic uncertainty in forecasting exchange rate returns and realized volatility: Evidence from quantile predictive regressions. Journal of Forecasting, 37(7), 705-719.
+- Cai, Z., & Chang, S. Y. (2017). A new test on asset return predictability with structural breaks. University of Kansas. Working paper. 
+- Cai, Z., Chen, H., & Liao, X. (2022). A new robust inference for predictive quantile regression. Journal of Econometrics.
 - Demetrescu, M., Georgiev, I., Rodrigues, P. M., & Taylor, A. R. (2022). Extensions to IVX methods of inference for return predictability. Journal of Econometrics.
 - Demetrescu, M., & Rodrigues, P. M. (2020). Residual-augmented IVX predictive regression. Journal of Econometrics.
 - Hosseinkouchack, M., & Demetrescu, M. (2021). Finite-sample size control of IVX-based tests in predictive regressions. Econometric Theory, 37(4), 769-793.
@@ -105,6 +106,7 @@ library("ivxPredictive")
 
 - Rao, M. M. (1961). Consistency and limit distributions of estimators of parameters in explosive stochastic difference equations. The Annals of Mathematical Statistics, 32(1), 195-218.
 - Rao, M. M. (1966). Inference in stochastic processes. II. Zeitschrift für Wahrscheinlichkeitstheorie und Verwandte Gebiete, 5(4), 317-335.
+- Hee, O. (1966). Tests for Predictability of Statistical Models. Journal of Farm Economics, 48(5), 1479-1484.
 
 ### 1970's
 
@@ -133,6 +135,7 @@ library("ivxPredictive")
 ### 2000's
 - Aue, A., & Horváth, L. (2007). A limit theorem for mildly explosive autoregression with stable errors. Econometric Theory, 23(2), 201-220.
 - Buchmann, B., & Chan, N. H. (2007). Asymptotic theory of least squares estimators for nearly unstable processes under strong dependence. The Annals of Statistics, 35(5), 2001-2017.
+- Campbell, J. Y., & Yogo, M. (2006). Efficient tests of stock return predictability. Journal of financial economics, 81(1), 27-60.
 - Jansson, M., & Moreira, M. J. (2006). Optimal inference in regression models with nearly integrated regressors. Econometrica, 74(3), 681-714.
 - Mikusheva, A. (2007). Uniform inference in autoregressive models. Econometrica, 75(5), 1411-1452.
 - Müller, U. K., & Elliott, G. (2003). Tests for unit roots and the initial condition. Econometrica, 71(4), 1269-1286.
