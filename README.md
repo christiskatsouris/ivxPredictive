@@ -85,8 +85,9 @@ library("ivxPredictive")
 
 ### 1940's
 
-- Mann, H. B., & Wald, A. (1943). On the statistical treatment of linear stochastic difference equations. Econometrica, Journal of the Econometric Society, 173-220.
 - Slutzky, E. (1937). The summation of random causes as the source of cyclic processes. Econometrica: Journal of the Econometric Society, 105-146.
+- Mann, H. B., & Wald, A. (1943). On the statistical treatment of linear stochastic difference equations. Econometrica, Journal of the Econometric Society, 173-220.
+- Wald, A. (1949). Note on the consistency of the maximum likelihood estimate. The Annals of Mathematical Statistics, 20(4), 595-601.
 
 ### 1950's
 
