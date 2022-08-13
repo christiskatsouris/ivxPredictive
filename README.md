@@ -95,8 +95,9 @@ library("ivxPredictive")
 - Cramér, H. (1951). A contribution to the theory of stochastic processes. In Proceedings of the Second Berkeley Symposium on Mathematical Statistics and Probability (Vol. 2, pp. 329-340). University of California Press.
 - Grenander, U. (1954). On the estimation of regression coefficients in the case of an autocorrelated disturbance. The Annals of Mathematical Statistics, 25(2), 252-272.
 - Rubin, H. (1950). Consistency of maximum likelihood estimates in the explosive case. Statistical Inference in Dynamic Economic Models, 356-364.
-- White, J. S. (1959). The limiting distribution of the serial correlation coefficient in the explosive case II. The Annals of Mathematical Statistics, 831-834.
 - White, J. S. (1958). The limiting distribution of the serial correlation coefficient in the explosive case. The Annals of Mathematical Statistics, 1188-1197.
+- White, J. S. (1959). The limiting distribution of the serial correlation coefficient in the explosive case II. The Annals of Mathematical Statistics, 831-834.
+
 
 ### 1960's
 
