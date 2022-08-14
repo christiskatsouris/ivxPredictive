@@ -176,6 +176,10 @@ The $R_n$ matrix includes the autocorrelation coefficients of the state equation
 - Müller, U. K., & Elliott, G. (2003). Tests for unit roots and the initial condition. Econometrica, 71(4), 1269-1286.
 - Phillips, P. C. B., Moon, H. R., & Xiao, Z. (2001). How to estimate autoregressive roots near unity. Econometric Theory, 17(1), 29-69.
 
+### Other
+
+Phillips, D. C. (1995). $\textbf{The good, the bad, and the ugly}$: The many faces of constructivism. Educational researcher, 24(7), 5-12.
+
 # Code of Coduct
 
 Please note that the ‘ivxPredictive’ project will be released with a Contributor Code of Coduct (under construction). By contributing to this project, you agree to abide by its terms.
