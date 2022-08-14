@@ -227,3 +227,8 @@ In contrast to the ordinary least squares estimates, the opposite result seems t
 - Ke-Li Xu & Junjie Guo (2022). A New Test for Multiple Predictive Regression. Journal of Financial Econometrics, nbac030.
 
 
+<p align="center">
+  
+<img src="https://github.com/christiskatsouris/ivxPredictive/blob/main/data/fish.jpg" width="460"/>
+
+</p>  
