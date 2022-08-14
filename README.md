@@ -229,6 +229,6 @@ In contrast to the ordinary least squares estimates, the opposite result seems t
 
 <p align="center">
   
-<img src="https://github.com/christiskatsouris/ivxPredictive/blob/main/data/fish.jpg" width="460"/>
+<img src="https://github.com/christiskatsouris/ivxPredictive/blob/main/data/cyprus.jpg" width="460"/>
 
 </p>  
