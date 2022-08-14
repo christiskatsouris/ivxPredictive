@@ -164,6 +164,7 @@ The $R_n$ matrix includes the autocorrelation coefficients of the state equation
 - Cavanagh, C. L., Elliott, G., & Stock, J. H. (1995). Inference in models with nearly integrated regressors. Econometric theory, 11(5), 1131-1147.
 - Elliott, G., Rothenberg, T. J., & Stock, J. H. (1996). Efficient tests for an autoregressive unit root. Econometrica, 64 (4), 813-836.
 - Jeganathan, P. (1991). On the asymptotic behavior of least-squares estimators in AR time series with roots near the unit circle. Econometric Theory, 7(3), 269-306.
+- Phillips, P. C. B. (1991). Optimal inference in cointegrated systems. Econometrica: Journal of the Econometric Society, 283-306.
 
 ### 2000's
 - Aue, A., & Horváth, L. (2007). A limit theorem for mildly explosive autoregression with stable errors. Econometric Theory, 23(2), 201-220.
