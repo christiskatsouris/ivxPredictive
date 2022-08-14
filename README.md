@@ -182,6 +182,12 @@ The $R_n$ matrix includes the autocorrelation coefficients of the state equation
 - Hachemeister, C. (1975). Credibility for regression models with application to trend. Credibility: Theory and Applications. Edited by P. Kahn. New York: Academic Press, Inc, 307-48.
 - Welch, P. (1967). The use of fast Fourier transform for the estimation of power spectra: a method based on time averaging over short, modified periodograms. IEEE Transactions on audio and electroacoustics, 15(2), 70-73.
 
+### Remark: 
+
+In contrast to the ordinary least squares estimates, the opposite result seems to hold for the original IVX estimator, that is, it seems to not uniformly be improving when many parameters are estimated. The particular aspect, is currently an open research question in the literature which worths further investigation. Related studies in this direction include: 
+
+- Lee, J. H., Shi, Z., & Gao, Z. (2022). On LASSO for predictive regression. Journal of Econometrics, 229(2), 322-349.
+- Ke-Li Xu & Junjie Guo (2022). A New Test for Multiple Predictive Regression. Journal of Financial Econometrics.
 
 # Code of Coduct
 
@@ -219,12 +225,7 @@ $\textbf{Harald Cramér}$ (25 September 1893 – 5 October 1985) was a Swedish m
 $\textbf{Charles Stein}$  (22 March 1920 – 24 November 2016) was an American mathematical statistician and professor of statistics at Stanford University. 
 He received his Ph.D in 1947 at Columbia University with advisor Abraham Wald. He held faculty positions at Berkeley and the University of Chicago before moving permanently to Stanford in 1953. He is known for Stein's paradox in decision theory, which shows that ordinary least squares estimates can be uniformly improved when many parameters are estimated; for Stein's lemma, giving a formula for the covariance of one random variable with the value of a function of another when the two random variables are jointly normally distributed; and for Stein's method, a way of proving theorems such as the Central Limit Theorem that does not require the variables to be independent and identically distributed (Source: Wikepedia).
 
-### Remark: 
 
-In contrast to the ordinary least squares estimates, the opposite result seems to hold for the original IVX estimator, that is, it seems to not uniformly be improving when many parameters are estimated. The particular aspect, is currently an open research question in the literature which worths further investigation. Some new studies in this direction include: 
-
-- Lee, J. H., Shi, Z., & Gao, Z. (2022). On LASSO for predictive regression. Journal of Econometrics, 229(2), 322-349.
-- Ke-Li Xu & Junjie Guo (2022). A New Test for Multiple Predictive Regression. Journal of Financial Econometrics.
 
 
 <p align="center">
