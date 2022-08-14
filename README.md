@@ -199,7 +199,7 @@ Part of the aspects implemented in the R package 'ivxPredictive', are discussed 
 
 Christis G. Katsouris has recently participated to various international academic conferences such as the following: (i) the International Symposium  on Nonparametric Statistics (ISNS), June 2022 in Paphos, Cyprus, (ii) the Hausdorff Center for Mathematics Summer School in High-Dimensional Statistics, July 2021 in Bonn, Germany and (iii) the International Association for Applied Econometrics, Annual Conference, June 2019 in Nicosia, Cyprus. 
 
-- $\textbf{An Econometrician amongst Statisticians or A Statistician amongst Econometricians?}$ (to be continued).
+$\textbf{An Econometrician amongst Statisticians or A Statistician amongst Econometricians?}$ (to be continued).
 
 $\textbf{News:}$ The author will be joining the [University of Exeter Business School](http://business-school.exeter.ac.uk/) as a Visiting Lecturer in Economics (Education and Scholarship) at the Department of Economics in September 2022.
 
