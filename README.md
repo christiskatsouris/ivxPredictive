@@ -57,7 +57,7 @@ library("ivxPredictive")
 
 ### Example 1:
 
-Consider the predictive regression model with multiple predictors. Notice that the Aols matrix of coefficients can be obtained as below
+Consider the predictive regression model with multiple predictors. Then, the Aols matrix of coefficients can be obtained as below
 
 ```R
 
