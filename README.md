@@ -181,6 +181,7 @@ The $R_n$ matrix includes the autocorrelation coefficients of the state equation
 - Phillips, D. C. (1995). $\textbf{The good, the bad, and the ugly}$: The many faces of constructivism. Educational researcher, 24(7), 5-12.
 - Hachemeister, C. (1975). Credibility for regression models with application to trend. Credibility: Theory and Applications. Edited by P. Kahn. New York: Academic Press, Inc, 307-48.
 - Welch, P. (1967). The use of fast Fourier transform for the estimation of power spectra: a method based on time averaging over short, modified periodograms. IEEE Transactions on audio and electroacoustics, 15(2), 70-73.
+- Chan, K. W. (2022). Optimal difference-based variance estimators in time series: A general framework. The Annals of Statistics, 50(3), 1376-1400.
 
 # Code of Coduct
 
