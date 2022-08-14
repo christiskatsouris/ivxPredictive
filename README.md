@@ -175,7 +175,6 @@ The $R_n$ matrix includes the autocorrelation coefficients of the state equation
 - Mikusheva, A. (2007). Uniform inference in autoregressive models. Econometrica, 75(5), 1411-1452.
 - Müller, U. K., & Elliott, G. (2003). Tests for unit roots and the initial condition. Econometrica, 71(4), 1269-1286.
 - Phillips, P. C. B., Moon, H. R., & Xiao, Z. (2001). How to estimate autoregressive roots near unity. Econometric Theory, 17(1), 29-69.
-- Chen, W. W., Deo, R. S., & Yi, Y. (2013). Uniform inference in predictive regression models. Journal of Business & Economic Statistics, 31(4), 525-533.
 
 # Code of Coduct
 
