@@ -57,14 +57,20 @@ library("ivxPredictive")
 
 ### Example 1:
 
-Consider the predictive regression model with multiple predictors. Then, the Aols matrix of coefficients can be obtained as below
+Consider the predictive regression model with multiple predictors. Then, the Aols vector of parameters (not a matrix in this case, since the response is a scalar vector) and the Rols matrix of coefficients can be obtained as below
 
 ```R
 
-lmodel <- lm(yt ~ xt)
-Aols   <- coefficients(lmodel)  
+lm1  <- lm(yt ~ xt)
+Aols <- coefficients(lm1)  
 
-> rn
+Rn   <- matrix(0, p, p)
+  for (i in 1:p) 
+  {
+    Rn[i, i] <- lm( Xt[, i] ~ 0 + Xlag[, i] )$coefficients
+  }
+  
+> Rn
           [,1]      [,2]       [,3]      [,4]     [,5]        [,6]     
 [1,] 0.9891264 0.0000000 0.00000000 0.0000000 0.000000  0.00000000  
 [2,] 0.0000000 0.8461566 0.00000000 0.0000000 0.000000  0.00000000  
@@ -75,6 +81,10 @@ Aols   <- coefficients(lmodel)
 [7,] 0.0000000 0.0000000 0.00000000 0.0000000 0.000000  0.00000000 
 
 ```
+
+### Remarks:
+
+The $R_n$ matrix includes the autocorrelation coefficients of the state equation of the predictive regression system. As we can see above some of these coefficients are close to the unit boundary from below and some reach the unit boundary from the explosive side.  
 
 
 ## Key References:
