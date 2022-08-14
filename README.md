@@ -53,6 +53,30 @@ library("ivxPredictive")
 
 3. The author would like to thank [Ji Hyung Lee](https://economics.illinois.edu/profile/jihyung) for kindly sharing the Matlab code for the implementation of the original IVX instrumentation method for the quantile predictive regression. 
 
+## Empirical Illustrations
+
+### Example 1:
+
+Consider the predictive regression model with multiple predictors. Notice that the Aols matrix of coefficients can be obtained as below
+
+```R
+
+lmodel <- lm(yt ~ xt)
+Aols   <- coefficients(lmodel)  
+
+> rn
+          [,1]      [,2]       [,3]      [,4]     [,5]        [,6]     
+[1,] 0.9891264 0.0000000 0.00000000 0.0000000 0.000000  0.00000000  
+[2,] 0.0000000 0.8461566 0.00000000 0.0000000 0.000000  0.00000000  
+[3,] 0.0000000 0.0000000 0.07760762 0.0000000 0.000000  0.00000000  
+[4,] 0.0000000 0.0000000 0.00000000 0.9985889 0.000000  0.00000000  
+[5,] 0.0000000 0.0000000 0.00000000 0.0000000 1.000366  0.00000000 
+[6,] 0.0000000 0.0000000 0.00000000 0.0000000 0.000000  1.04066777  
+[7,] 0.0000000 0.0000000 0.00000000 0.0000000 0.000000  0.00000000 
+
+```
+
+
 ## Key References:
 
 - Katsouris, C. (2022b). "Asymptotic Theory for Moderate Deviations from the Unit Boundary in Quantile Autoregression and Predictive Regression Models". University of Southampton, Working paper.  
