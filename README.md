@@ -197,9 +197,9 @@ The author greatfully acknowledges financial support from Graduate Teaching Assi
 
 Part of the aspects implemented in the R package 'ivxPredictive', are discussed in the PhD thesis of the author (Christis G. Katsouris) titled: "Aspects of Estimation and Inference for Predictive Regression Models", completed under the supervision of  [Professor Jose Olmo](https://www.southampton.ac.uk/people/5xb29b/professor-jose-olmo) and [Professor Anastasios Magdalinos](https://www.southampton.ac.uk/people/5x7sz7/professor-anastasios-magdalinos#supervision). In his PhD thesis, Katsouris C. generalises the work of Phillips P.C.B (under the guidance of his advisor Magdalinos T.) on robust econometric inference for nonstationary time series models, under more general persistence conditions than his predecessors. Furthermore, he proposes testing methodologies for structural break detection in predictive regressions.
 
-Christis G. Katsouris has recently participated to various international academic conferences such as: (i) the International Symposium  on Nonparametric Statistics (ISNS), June 2022 in Paphos, Cyprus, (ii) the Hausdorff Center for Mathematics Summer School in High-Dimensional Statistics, July 2021 in Bonn, Germany and (iii) the International Association for Applied Econometrics, Annual Conference, June 2019 in Nicosia, Cyprus. 
+Christis G. Katsouris has recently participated to various international academic conferences such as the following: (i) the International Symposium  on Nonparametric Statistics (ISNS), June 2022 in Paphos, Cyprus, (ii) the Hausdorff Center for Mathematics Summer School in High-Dimensional Statistics, July 2021 in Bonn, Germany and (iii) the International Association for Applied Econometrics, Annual Conference, June 2019 in Nicosia, Cyprus. 
 
-- $\textbf{An Econometrician amongst Statisticians or A Statistician among Econometricians?}$ (to be continued).
+- $\textbf{An Econometrician amongst Statisticians or A Statistician amongst Econometricians?}$ (to be continued).
 
 $\textbf{News:}$ The author will be joining the [University of Exeter Business School](http://business-school.exeter.ac.uk/) as a Visiting Lecturer in Economics (Education and Scholarship) at the Department of Economics in September 2022.
 
