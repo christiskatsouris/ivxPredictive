@@ -179,7 +179,7 @@ The $R_n$ matrix includes the autocorrelation coefficients of the state equation
 ### Other
 
 - Phillips, D. C. (1995). $\textbf{The good, the bad, and the ugly}$: The many faces of constructivism. Educational researcher, 24(7), 5-12.
-- Hachemeister, Charles. "Credibility for regression models with application to trend (reprint)." Credibility: Theory and Applications. Edited by P. Kahn. New York: Academic Press, Inc (1975): 307-48.
+- Hachemeister, C. (1975). Credibility for regression models with application to trend. Credibility: Theory and Applications. Edited by P. Kahn. New York: Academic Press, Inc, 307-48.
 
 # Code of Coduct
 
