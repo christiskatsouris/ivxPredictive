@@ -235,3 +235,5 @@ He received his Ph.D in 1947 at Columbia University with advisor Abraham Wald. H
 </p>  
 
 > A Cypriot fisherman in Paphos Harbour. 
+
+[Ten Golden Rules of Retiring Retirement](https://stanfordbrown.com.au/intelligence/ten-golden-rules-of-retiring-retirement/).
