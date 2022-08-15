@@ -117,9 +117,13 @@ The $R_n$ matrix includes the autocorrelation coefficients of the state equation
 
 ## Seminal Studies:
 
-### 1940's
+### 1930's
 
 - Slutzky, E. (1937). The summation of random causes as the source of cyclic processes. Econometrica: Journal of the Econometric Society, 105-146.
+
+### 1940's
+
+- Anderson, R. L. (1942). Distribution of the serial correlation coefficient. The Annals of Mathematical Statistics, 13(1), 1-13.
 - Mann, H. B., & Wald, A. (1943). On the statistical treatment of linear stochastic difference equations. Econometrica, Journal of the Econometric Society, 173-220.
 - Kac, M., & Erdos, P. (1946). On certain limit theorems of the theory of probability. Bull. Amer. Math. Soc, 52, 292-302.
 - Wald, A. (1949). Note on the consistency of the maximum likelihood estimate. The Annals of Mathematical Statistics, 20(4), 595-601.
@@ -176,6 +180,15 @@ The $R_n$ matrix includes the autocorrelation coefficients of the state equation
 - Mikusheva, A. (2007). Uniform inference in autoregressive models. Econometrica, 75(5), 1411-1452.
 - Müller, U. K., & Elliott, G. (2003). Tests for unit roots and the initial condition. Econometrica, 71(4), 1269-1286.
 - Phillips, P. C. B., Moon, H. R., & Xiao, Z. (2001). How to estimate autoregressive roots near unity. Econometric Theory, 17(1), 29-69.
+
+### 2010's
+
+(see above)
+
+### 2020's
+
+e.g. KATSOURIS C. (2022+)
+- Related papers by other Econometricians.
 
 ### Other
 
