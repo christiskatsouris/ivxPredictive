@@ -137,6 +137,7 @@ The $R_n$ matrix includes the autocorrelation coefficients of the state equation
 
 ### 1960's
 
+- Mandelbrot, B. (1963). The Variation of Certain Speculative Prices. The Journal of Business, 36(4), 394-419.
 - Rao, M. M. (1961). Consistency and limit distributions of estimators of parameters in explosive stochastic difference equations. The Annals of Mathematical Statistics, 32(1), 195-218.
 - Rao, M. M. (1966). Inference in stochastic processes. II. Zeitschrift für Wahrscheinlichkeitstheorie und Verwandte Gebiete, 5(4), 317-335.
 - Hee, O. (1966). Tests for Predictability of Statistical Models. Journal of Farm Economics, 48(5), 1479-1484.
