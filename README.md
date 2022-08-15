@@ -124,6 +124,7 @@ The $R_n$ matrix includes the autocorrelation coefficients of the state equation
 ### 1940's
 
 - Anderson, R. L. (1942). Distribution of the serial correlation coefficient. The Annals of Mathematical Statistics, 13(1), 1-13.
+- Haavelmo, T. (1943). The statistical implications of a system of simultaneous equations. Econometrica, Journal of the Econometric Society, 1-12.
 - Mann, H. B., & Wald, A. (1943). On the statistical treatment of linear stochastic difference equations. Econometrica, Journal of the Econometric Society, 173-220.
 - Kac, M., & Erdos, P. (1946). On certain limit theorems of the theory of probability. Bull. Amer. Math. Soc, 52, 292-302.
 - Wald, A. (1949). Note on the consistency of the maximum likelihood estimate. The Annals of Mathematical Statistics, 20(4), 595-601.
