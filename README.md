@@ -189,7 +189,7 @@ The $R_n$ matrix includes the autocorrelation coefficients of the state equation
 ### 2020's
 
 - e.g. KATSOURIS C. (2022+)
-- Related papers by other Econometricians (e.g. born after 1960).
+- Related papers by other Econometricians (e.g. born after 1956).
 
 ### Other
 
