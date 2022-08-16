@@ -61,14 +61,14 @@ Consider the predictive regression model with multiple predictors. Then, the Aol
 
 ```R
 
-lm1  <- lm(yt ~ xt)
+lm1  <- lm(yt ~ Xlag)
 Aols <- coefficients(lm1)  
 
 Rn   <- matrix(0, p, p)
-  for (i in 1:p) 
-  {
-    Rn[i, i] <- lm( Xt[, i] ~ 0 + Xlag[, i] )$coefficients
-  }
+for (i in 1:p) 
+{
+   Rn[i, i] <- lm( Xt[, i] ~ 0 + Xlag[, i] )$coefficients
+}
   
 > Rn
           [,1]      [,2]       [,3]      [,4]     [,5]        [,6]     
