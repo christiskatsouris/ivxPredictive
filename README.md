@@ -189,12 +189,6 @@ The $R_n$ which is a $(p \times p)$ matrix corresponds to the autocorrelation co
 - Müller, U. K., & Elliott, G. (2003). Tests for unit roots and the initial condition. Econometrica, 71(4), 1269-1286.
 - Phillips, P. C. B., Moon, H. R., & Xiao, Z. (2001). How to estimate autoregressive roots near unity. Econometric Theory, 17(1), 29-69.
 
-### Other
-
-- Phillips, D. C. (1995). $\textbf{The good, the bad, and the ugly}$: The many faces of constructivism. Educational researcher, 24(7), 5-12.
-- Hachemeister, C. (1975). Credibility for regression models with application to trend. Credibility: Theory and Applications. Edited by P. Kahn. New York: Academic Press, Inc, 307-48.
-- Welch, P. (1967). The use of fast Fourier transform for the estimation of power spectra: a method based on time averaging over short, modified periodograms. IEEE Transactions on audio and electroacoustics, 15(2), 70-73.
-
 ### Remark: 
 
 In contrast to the ordinary least squares estimates, the opposite result seems to hold for the original IVX estimator, that is, it seems to not uniformly be improving when many parameters are estimated. The particular aspect, is currently an open research question in the literature which worths further investigation. Some related studies in this direction include: 
@@ -249,3 +243,8 @@ He received his Ph.D in 1947 at Columbia University with advisor Abraham Wald. H
 
 > A Cypriot fisherman in Paphos Harbour. 
 
+### Other
+
+- Phillips, D. C. (1995). $\textbf{The good, the bad, and the ugly}$: The many faces of constructivism. Educational researcher, 24(7), 5-12.
+- Hachemeister, C. (1975). Credibility for regression models with application to trend. Credibility: Theory and Applications. Edited by P. Kahn. New York: Academic Press, Inc, 307-48.
+- Welch, P. (1967). The use of fast Fourier transform for the estimation of power spectra: a method based on time averaging over short, modified periodograms. IEEE Transactions on audio and electroacoustics, 15(2), 70-73.
