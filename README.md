@@ -241,7 +241,7 @@ He received his Ph.D in 1947 at Columbia University with advisor Abraham Wald. H
 
 </p>  
 
-> A Cypriot fisherman in Paphos Harbour. 
+> A Cypriot fisherman in Paphos Harbour. Cyprus has a long-standing fisheries tradition. Despite its limited contribution (around 0.8%) to GDP, the Cypriot fisheries sector holds significant socio-economic importance, particularly in coastal areas. Over 300 types of fish have been found in the sea around Cyprus, some of them immigrants from the Red Sea through the Suez Canal. The Cypriot fishing fleet comprised 858 vessels in 2019, with a combined GT of 3,811 and a total engine power of 40,801 kW. 
 
 ### Other
 
