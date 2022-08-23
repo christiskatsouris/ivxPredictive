@@ -18,12 +18,12 @@ We consider the following persistence classes:
 
 $$\text{if} \ \ \left( \theta_n \right)_{ n \in \mathbb{N} } \ \ \text{is such that} \ \zeta = - \infty \ \ \text{and it holds that} \ \ \theta_n \to | \theta | < 1.$$
     
-$\textbf{(P2). nearly unstable}$ processes:   
+#### (P2). nearly unstable} processes:   
 
 $$\text{if} \ \ \left( \theta_n \right)_{ n \in \mathbb{N} } \ \ \text{is such that} \ \ \zeta \equiv c \in \mathbb{R} \ \ \text{and it holds that} \ \ \theta_n \to \theta = 1.$$
 
     
-$\textbf{(P3). nearly explosive}$ processes:   
+#### (P3). nearly explosive processes:   
 
 $$\text{if} \ \ \left( \theta_n \right)_{ n \in \mathbb{N} } \ \ \text{is such that} \ \ \zeta = + \infty \ \ \text{and it holds that} \ \ \theta_n \to | \theta | > 1.$$
 
@@ -225,14 +225,18 @@ Part of the aspects implemented in the R package 'ivxPredictive', are discussed 
 > $\textit{''If I have been able to see further, it was only because I stood on the shoulders of giants."}$
 > $- \text{Isaac Newton, 1676}$ 
 
-$\textbf{Aleksandr Lyapunov}$ (6 June 1857 – 3 November 1918) was a Russian mathematician, mechanician and physicist. Lyapunov is known for his development of the stability theory of a dynamical system, as well as for his many contributions to mathematical physics and probability theory. A major theme in Lyapunov's research was the stability of a rotating fluid mass with possible astronomical application. His main preoccupations were the stability of equilibria and the motion of mechanical systems, especially rotating fluid masses, and the study of particles under the influence of gravity. Lyapunov's work in the field of mathematical physics regarded the boundary value problem of the equation of Laplace. In the theory of potential, his work from 1897: "On some questions connected with Dirichlet's problem" clarified several important aspects of the theory. His work in this field is in close connection with the work of Steklov. Lyapunov developed many important approximation methods. His methods, which he developed in 1899, make it possible to define the stability of sets of ordinary differential equations. In the theory of probability, he generalised the works of Chebyshev and Markov, and proved the Central Limit Theorem under more general conditions than his predecessors. The method of characteristic functions he used for the proof later found widespread use in probability theory (Source: Wikepedia).
+#### Aleksandr Lyapunov 
 
-$\textbf{Harald Cramér}$ (25 September 1893 – 5 October 1985) was a Swedish mathematician, actuary, and statistician, specializing in mathematical statistics and probabilistic number theory. John Kingman described him as "one of the giants of statistical theory". A large portion of Cramér's work concerned the field of actuarial science and insurance mathematics. In 1929, Cramér was appointed to a newly created chair in Stockholm University, becoming the first Swedish professor of Actuarial Mathematics and Mathematical Statistics. Cramér retained this position up until 1958. During his tenure at Stockholm University, Cramér was a PhD advisor for 10 students, most notably Herman Wold and Kai Lai Chung. In 1950 he was elected as a Fellow of the American Statistical Association. Starting in 1950, Cramér took on the additional responsibility of becoming the President of Stockholm University. In 1958, he was also appointed to be Chancellor of the entire Swedish university system (Source: Wikepedia). 
+Aleksandr Lyapunov  (6 June 1857 – 3 November 1918) was a Russian mathematician, mechanician and physicist. Lyapunov is known for his development of the stability theory of a dynamical system, as well as for his many contributions to mathematical physics and probability theory. A major theme in Lyapunov's research was the stability of a rotating fluid mass with possible astronomical application. His main preoccupations were the stability of equilibria and the motion of mechanical systems, especially rotating fluid masses, and the study of particles under the influence of gravity. Lyapunov's work in the field of mathematical physics regarded the boundary value problem of the equation of Laplace. In the theory of potential, his work from 1897: "On some questions connected with Dirichlet's problem" clarified several important aspects of the theory. His work in this field is in close connection with the work of Steklov. Lyapunov developed many important approximation methods. His methods, which he developed in 1899, make it possible to define the stability of sets of ordinary differential equations. In the theory of probability, he generalised the works of Chebyshev and Markov, and proved the Central Limit Theorem under more general conditions than his predecessors. The method of characteristic functions he used for the proof later found widespread use in probability theory (Source: Wikepedia).
 
-$\textbf{Charles Stein}$  (22 March 1920 – 24 November 2016) was an American mathematical statistician and professor of statistics at Stanford University. 
+#### Harald Cramér 
+
+Harald Cramér  (25 September 1893 – 5 October 1985) was a Swedish mathematician, actuary, and statistician, specializing in mathematical statistics and probabilistic number theory. John Kingman described him as "one of the giants of statistical theory". A large portion of Cramér's work concerned the field of actuarial science and insurance mathematics. In 1929, Cramér was appointed to a newly created chair in Stockholm University, becoming the first Swedish professor of Actuarial Mathematics and Mathematical Statistics. Cramér retained this position up until 1958. During his tenure at Stockholm University, Cramér was a PhD advisor for 10 students, most notably Herman Wold and Kai Lai Chung. In 1950 he was elected as a Fellow of the American Statistical Association. Starting in 1950, Cramér took on the additional responsibility of becoming the President of Stockholm University. In 1958, he was also appointed to be Chancellor of the entire Swedish university system (Source: Wikepedia). 
+
+#### Charles Stein
+
+Charles Stein  (22 March 1920 – 24 November 2016) was an American mathematical statistician and professor of statistics at Stanford University. 
 He received his Ph.D in 1947 at Columbia University with advisor Abraham Wald. He held faculty positions at Berkeley and the University of Chicago before moving permanently to Stanford in 1953. He is known for Stein's paradox in decision theory, which shows that ordinary least squares estimates can be uniformly improved when many parameters are estimated; for Stein's lemma, giving a formula for the covariance of one random variable with the value of a function of another when the two random variables are jointly normally distributed; and for Stein's method, a way of proving theorems such as the Central Limit Theorem that does not require the variables to be independent and identically distributed (Source: Wikepedia).
-
-
 
 
 <p align="center">
