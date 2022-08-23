@@ -83,7 +83,7 @@ for (i in 1:p)
 
 ### Remarks:
 
-The $R_n$ which is a $(p \times p)$ matrix corresponds to the autocorrelation coefficients of the nonstationary regressors of the predictive regression model. In the theoretical speciciation of the predictive regression model, there are modeled using an AR(1) model with a local-unit-root expression to capture persistence and near the unity characteristics. From the empirical example above, we see that some of these coefficients are close to the unit boundary from below and some reach the unit boundary from the explosive side.  
+The $R_n$ which is a $(p \times p)$ matrix corresponds to the autocorrelation coefficients of the nonstationary regressors of the predictive regression model. In the theoretical speciciation of the predictive regression model, these are modeled using an AR(1) model with a local-unit-root expression to capture persistence and near the unity characteristics. From the empirical example above, we see that some of these coefficients are close to the unit boundary from below and some reach the unit boundary from the explosive side.  
 
 ### Example 2: (Covariance Matrix Estimation)
 
