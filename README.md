@@ -221,7 +221,7 @@ Christis G. Katsouris has participated to various international academic confere
 
 > Standing on the shoulders of giants.
 > 
-> $\textit{''If I have been able to see further, it was only because I stood on the shoulders of giants."}$
+> ''_If I have been able to see further, it was only because I stood on the shoulders of giants._"
 > $- \text{Isaac Newton, 1676}$ 
 
 #### Aleksandr Lyapunov 
