@@ -93,6 +93,10 @@ The $R_n$ which is a $(p \times p)$ matrix corresponds to the autocorrelation co
 
 ```
 
+### Remarks:
+
+Notice that a second important aspect when fitting predictive regression models as well as in cases when test statistics are constructed for testing hypotheses such as structural break detection is the demeaning of random variables especially when the true model is assumed to have a non-zero model intercept.  
+
 ## Key References:
 
 - Katsouris, C. (2022b). "Asymptotic Theory for Moderate Deviations from the Unit Boundary in Quantile Autoregression and Predictive Regression Models". University of Southampton, Working paper.  
