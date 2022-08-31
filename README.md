@@ -96,13 +96,13 @@ for i=1:l
   rn(i,i) = regress( xt(:,i), xlag(:,i) );
 end
 
-% autoregressive residual estimation 
+# autoregressive residual estimation 
 u = xt-xlag*rn;
 
-% residuals' correlation matrix
+# residuals' correlation matrix
 corrmat = corrcoef([epshat u]);
 
-%covariance matrix estimation (predictive regression)
+# covariance matrix estimation (predictive regression)
 covepshat = epshat'*epshat/nn;
 covu = zeros(l,l);
 
@@ -110,7 +110,7 @@ for t=1:nn
     covu = covu+u(t,:)'*u(t,:);
 end
 
-% covariance matrix estimation (autoregression)
+# covariance matrix estimation (autoregression)
 covu=covu/nn;
 covuhat=zeros(1,l);
 
