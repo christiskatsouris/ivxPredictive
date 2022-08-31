@@ -87,6 +87,8 @@ for (i in 1:p)
 
 (ii) The autocorrelation matrix that corresponds to the autoregressive specification of regressors is estimated based on least-squares optimization. The OLS estimator of the autocorrelation matrix similar to the case of univariate autoregressions is not a consistent estimator when the local-to-unity specification is imposed. However, the particular estimator is required when estimating statistics from fitted predictive regression models.   
 
+(iii) Another important aspect when fitting predictive regression models and especially when constructing test statistics such as testing for parameter instability in predictive regressions is to apply correctly the demeaning of random variables. Specifically, when the true model is assumed to have a non-zero model intercept then demeaning the random variables of the model can alter the asymptotic theory of estimators and test statistics depending on the underline persistence properties of regressors.  
+
 ### Example 2: (Covariance Matrix Estimation)
 
 The estimation procedure for the covariance matrix of estimators and test statistics in predictive regression models does not follow conventional formulations as in the case of stationary time series regression models. Due to the local-to-unity specification of the autocorrelation coefficient(s), which captures the unknown 'degree of persistence' in time series regressors, the predictive regression specification permits to include both 'nonstationary predictors' and/or 'cointegrated regressors'; therefore the estimation of the covariance matrix is obtained using nonparametric kernel methodologies in order to introduce an endogeneity bias correction.   
@@ -124,7 +126,7 @@ end
 
 ### Remarks:
 
-(i) A second important aspect when fitting predictive regression models and especially when constructing test statistics such as testing for parameter instability in predictive regressions is to apply correctly the demeaning of random variables. Specifically, when the true model is assumed to have a non-zero model intercept then demeaning the random variables of the model can alter the asymptotic theory of estimators and test statistics depending on the underline persistence properties of regressors.  
+(i) 
 
 (ii) 
 
