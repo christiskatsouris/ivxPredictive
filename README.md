@@ -87,7 +87,7 @@ The $R_n$ which is a $(p \times p)$ matrix corresponds to the autocorrelation co
 
 ### Example 2: (Covariance Matrix Estimation)
 
-The estimation procedure for the covariance matrix of estimators and test statistics in predictive regression models does not follow conventional formulations as in the case of stationary time series regression models. In particular, due to the local-to-unity specification as well as the presence of 'nonstationary predictors' and/or 'cointegrated regressors', the covariance matrix can be obtained using nonparametric kernel methodologies.   
+The estimation procedure for the covariance matrix of estimators and test statistics in predictive regression models does not follow conventional formulations as in the case of stationary time series regression models. Due to the local-to-unity specification of the autocorrelation coefficient(s), which captures the unknown 'degree of persistence' in time series regressors, the predictive regression specification permits to include both 'nonstationary predictors' and/or 'cointegrated regressors'; therefore the estimation of the covariance matrix is obtained using nonparametric kernel methodologies in order to introduce an endogeneity bias correction.   
 
 ```R
 
