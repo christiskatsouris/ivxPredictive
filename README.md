@@ -132,6 +132,7 @@ end
 
 ### Example 3: (Instrumental Variables Estimation)
 
+Firstly, we consider estimation procedure for the original IVX instrumentation of [Phillips and Magdalinos (2009)](https://ideas.repec.org/p/skb/wpaper/cofie-06-2009.html) and [Kostakis, Magdalinos and Stamatogiannis (2015)](https://academic.oup.com/rfs/article/28/5/1506/1867633?login=true) and discuss the main features. Secondly, we present the estimation procedure of the IVX-P estimator (i.e., the IVX instrumentation that covers the whole spectrum of persistence classes in a unified way) and discuss the main features.  
 
 
 ## Key References:
