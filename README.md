@@ -91,11 +91,13 @@ The $R_n$ which is a $(p \times p)$ matrix corresponds to the autocorrelation co
 
 
 
+
+
 ```
 
 ### Remarks:
 
-Notice that a second important aspect when fitting predictive regression models as well as in cases when test statistics are constructed for testing hypotheses such as structural break detection is the demeaning of random variables especially when the true model is assumed to have a non-zero model intercept.  
+Notice that a second important aspect when fitting predictive regression models and especially when constructing test statistics such as testing for parameter instability in predictive regressions is to apply correctly the demeaning of random variables. Specifically, when the true model is assumed to have a non-zero model intercept then demeaning the random variables of the model can alter the asymptotic theory of estimators and test statistics depending on the underline persistence properties of regressors.  
 
 ## Key References:
 
