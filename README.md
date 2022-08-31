@@ -55,7 +55,7 @@ library("ivxPredictive")
 
 ## Empirical Illustrations
 
-### Example 1:
+### Example 1: (Autocorrelation Matrix Estimation)
 
 Consider the predictive regression model with multiple predictors. Then, the Aols vector of parameters (not a matrix in this case, since the response is a scalar vector) and the Rols matrix of coefficients can be obtained as below
 
@@ -83,7 +83,9 @@ for (i in 1:p)
 
 ### Remarks:
 
-The $R_n$ which is a $(p \times p)$ matrix corresponds to the autocorrelation coefficients of the nonstationary regressors of the predictive regression model. In the theoretical speciciation of the predictive regression model, these are modeled using an AR(1) model with a local-unit-root expression to capture persistence and near the unity characteristics. From the empirical example above, we see that some of these coefficients are close to the unit boundary from below and some reach the unit boundary from the explosive side.  
+(i) The $R_n$ which is a $(p \times p)$ matrix corresponds to the autocorrelation coefficients of the nonstationary regressors of the predictive regression model. In the theoretical speciciation of the predictive regression model, these are modeled using an AR(1) model with a local-unit-root expression to capture persistence and near the unity characteristics. From the empirical example above, we see that some of these coefficients are close to the unit boundary from below and some reach the unit boundary from the explosive side. 
+
+(ii) The autocorrelation matrix that corresponds to the autoregressive specification of regressors is estimated based on least-squares optimization. The OLS estimator of the autocorrelation matrix similar to the case of univariate autoregressions is not a consistent estimator when the local-to-unity specification is imposed. However, the particular estimator is required when estimating statistics from fitted predictive regression models.   
 
 ### Example 2: (Covariance Matrix Estimation)
 
@@ -124,7 +126,11 @@ end
 
 (i) A second important aspect when fitting predictive regression models and especially when constructing test statistics such as testing for parameter instability in predictive regressions is to apply correctly the demeaning of random variables. Specifically, when the true model is assumed to have a non-zero model intercept then demeaning the random variables of the model can alter the asymptotic theory of estimators and test statistics depending on the underline persistence properties of regressors.  
 
-(ii) The autocorrelation matrix that corresponds to the autoregressive specification of regressors is estimated based on least-squares optimization. The OLS estimator of the autocorrelation matrix similar to the case of univariate autoregressions is not a consistent estimator when the local-to-unity specification is imposed. However, the particular estimator is required when estimating statistics from fitted predictive regression models.   
+(ii) 
+
+### Example 3: (Instrumental Variables Estimation)
+
+
 
 ## Key References:
 
