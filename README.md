@@ -246,16 +246,3 @@ Charles Stein  (22 March 1920 – 24 November 2016) was an American mathematical
 He received his Ph.D in 1947 at Columbia University with advisor Abraham Wald. He held faculty positions at Berkeley and the University of Chicago before moving permanently to Stanford in 1953. He is known for Stein's paradox in decision theory, which shows that ordinary least squares estimates can be uniformly improved when many parameters are estimated; for Stein's lemma, giving a formula for the covariance of one random variable with the value of a function of another when the two random variables are jointly normally distributed; and for Stein's method, a way of proving theorems such as the Central Limit Theorem that does not require the variables to be independent and identically distributed (Source: Wikepedia).
 
 
-<p align="center">
-  
-<img src="https://github.com/christiskatsouris/ivxPredictive/blob/main/data/cyprus.jpg" width="550"/>
-
-</p>  
-
-> A Cypriot fisherman in Paphos Harbour. Cyprus has a long-standing fisheries tradition. Despite its limited contribution (around 0.8%) to GDP, the Cypriot fisheries sector holds significant socio-economic importance, particularly in coastal areas. Over 300 types of fish have been found in the sea around Cyprus, some of them immigrants from the Red Sea through the Suez Canal. The Cypriot fishing fleet comprised 858 vessels in 2019, with a combined GT of 3,811 and a total engine power of 40,801 kW. 
-
-### Other
-
-- Phillips, D. C. (1995). $\textbf{The good, the bad, and the ugly}$: The many faces of constructivism. Educational researcher, 24(7), 5-12.
-- Hachemeister, C. (1975). Credibility for regression models with application to trend. Credibility: Theory and Applications. Edited by P. Kahn. New York: Academic Press, Inc, 307-48.
-- Welch, P. (1967). The use of fast Fourier transform for the estimation of power spectra: a method based on time averaging over short, modified periodograms. IEEE Transactions on audio and electroacoustics, 15(2), 70-73.
