@@ -87,6 +87,8 @@ The $R_n$ which is a $(p \times p)$ matrix corresponds to the autocorrelation co
 
 ### Example 2: (Covariance Matrix Estimation)
 
+The covariance matrix estimation in the case of predictive regression models does not follow conventional formulations as in the case of stationary time series regression models. 
+
 ```R
 
 
