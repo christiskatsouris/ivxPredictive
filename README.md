@@ -92,7 +92,6 @@ The estimation procedure for the covariance matrix of estimators and test statis
 ```R
 
 # Step 1: Estimation of the Rn autocorrelation coefficient 
-
 for i=1:l
   rn(i,i) = regress( xt(:,i), xlag(:,i) );
 end
