@@ -96,6 +96,7 @@ for i=1:l
   rn(i,i) = regress( xt(:,i), xlag(:,i) );
 end
 
+# 
 
 
 
@@ -103,7 +104,9 @@ end
 
 ### Remarks:
 
-Notice that a second important aspect when fitting predictive regression models and especially when constructing test statistics such as testing for parameter instability in predictive regressions is to apply correctly the demeaning of random variables. Specifically, when the true model is assumed to have a non-zero model intercept then demeaning the random variables of the model can alter the asymptotic theory of estimators and test statistics depending on the underline persistence properties of regressors.  
+(i) A second important aspect when fitting predictive regression models and especially when constructing test statistics such as testing for parameter instability in predictive regressions is to apply correctly the demeaning of random variables. Specifically, when the true model is assumed to have a non-zero model intercept then demeaning the random variables of the model can alter the asymptotic theory of estimators and test statistics depending on the underline persistence properties of regressors.  
+
+(ii) The autocorrelation matrix that corresponds to the autoregressive specification of regressors is estimated based on least-squares optimization.  
 
 ## Key References:
 
