@@ -144,6 +144,11 @@ Firstly, we consider estimation procedure for the original IVX instrumentation o
 
 ```
 
+### Remarks:
+
+Notice that various Software packages now exist which can be employed for monitoring time series data for explosive bubbles, although the main aim of developing the R package 'ivxPredictive' is for estimation and inference purposes, we briefly mention some of them here.    
+
+
 ## Key References:
 
 - Katsouris, C. (2022b). "Asymptotic Theory for Moderate Deviations from the Unit Boundary in Quantile Autoregression and Predictive Regression Models". University of Southampton, Working paper.  
