@@ -172,6 +172,18 @@ library(exuber)
         2.407
 ```
 
+## Application II: Forecasting
+
+In particular, we consider a forecasting exerice in which a fixed-size moving window is employed to estimate out-of-sample forecasting sequences based on the predictive regression model and the (original) ivx instrumentation, 
+
+```
+
+
+
+
+```
+
+# Bibliography
 
 ## Key References:
 
