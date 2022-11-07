@@ -174,7 +174,7 @@ library(exuber)
 
 ## Application II: Forecasting
 
-In particular, we consider a forecasting exerice in which a fixed-size moving window is employed to estimate out-of-sample forecasting sequences based on the predictive regression model and the (original) ivx instrumentation, 
+In particular, we consider a forecasting exerice in which a fixed-size moving window is employed to estimate out-of-sample forecasting sequences based on the predictive regression model and the (original) ivx instrumentation. Notice that two functions can be employed for the forecasting exercise: (i) "ivx_forecast" function: produces the y_hat_forecast based on the ivx instrumentation and (ii) "forecast_scheme" function: implements the fixed-size rolling window forecasting exercise. 
 
 ```
 ivx_forecast <- function( y.t.w = y.t.window, x.t.w = x.t.window, x.lag.w = x.lag.window, h = 1 ) 
@@ -333,7 +333,6 @@ ivx_forecast <- function( y.t.w = y.t.window, x.t.w = x.t.window, x.lag.w = x.la
   return( y.forecast )
   
 }#end of function
-
 ```
 
 # Bibliography
