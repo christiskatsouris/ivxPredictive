@@ -148,6 +148,30 @@ Firstly, we consider estimation procedure for the original IVX instrumentation o
 
 Notice that various Software packages now exist which can be employed for monitoring time series data for explosive bubbles, although the main aim of developing the R package 'ivxPredictive' is for estimation and inference purposes, we briefly mention some of them here. Specifically, the PWY (2011) and PSY (2015) statistical tests for monitoring explosive behaviour are implemented in MATLAB, R (package ['psymonitor'](https://github.com/itamarcaspi/psymonitor)) as well as in Eviews. Furthermore, the R package ['exuber'](https://github.com/kvasilopoulos/exuber) developed by [Kostas Vasilopoulos](https://github.com/kvasilopoulos) provides the corresponding R implementation while in Stata a coding implementation is discussed by [Baum and Otero, 2021](https://journals.sagepub.com/doi/full/10.1177/1536867X211063405). Lastly, a review on the current literature of testing for explosive bubbles can be also found in this study [literature](https://arxiv.org/abs/2207.08249).    
 
+### Illustrative Example: 
+
+```
+
+// installing the R package exuber
+install.packages("exuber")
+library(exuber)
+
+> rsim_data
+
+-- radf (minw = 19, lag = 0) ------------------------------------
+
+     id     adf   sadf   gsadf
+   psy1  -2.461  1.946   5.190
+   psy2  -2.858  7.880   7.880
+  evans  -5.830  5.283   5.985
+    div  -1.950  1.113   1.335
+   blan  -5.146  3.930  10.951
+
+  gsadf_panel
+        2.407
+
+```
+
 
 ## Key References:
 
