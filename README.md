@@ -151,7 +151,6 @@ Notice that various Software packages now exist which can be employed for monito
 ### Illustrative Example: 
 
 ```
-
 // installing the R package exuber
 install.packages("exuber")
 library(exuber)
@@ -169,7 +168,6 @@ library(exuber)
 
   gsadf_panel
         2.407
-
 ```
 
 
