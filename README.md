@@ -53,6 +53,8 @@ library("ivxPredictive")
 
 3. The author would like to thank [Ji Hyung Lee](https://economics.illinois.edu/profile/jihyung) for kindly sharing the Matlab code for the implementation of the original IVX instrumentation method for the quantile predictive regression. 
 
+# APPLICATION I: Robust Estimation and Inference
+
 ## Empirical Illustrations
 
 ### Example 1: (Autocorrelation Matrix Estimation)
