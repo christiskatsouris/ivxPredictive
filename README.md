@@ -177,9 +177,162 @@ library(exuber)
 In particular, we consider a forecasting exerice in which a fixed-size moving window is employed to estimate out-of-sample forecasting sequences based on the predictive regression model and the (original) ivx instrumentation, 
 
 ```
-
-
-
+ivx_forecast <- function( y.t.w = y.t.window, x.t.w = x.t.window, x.lag.w = x.lag.window, h = 1 ) 
+{# begin of function
+  
+  y.t.w   <- y.t.w
+  x.t.w   <- x.t.w
+  x.lag.w <- x.lag.w
+  
+  y.t.w   <- as.matrix( y.t.w )
+  x.t.w   <- as.matrix( x.t.w )
+  x.lag.w <- as.matrix( x.lag.w )
+  
+  nn <- NROW( x.lag.w )
+  f  <- NCOL( x.lag.w )
+  
+  # First stage regression i.e., yt on xt
+  lm1  <- lm(y.t.w ~ x.lag.w - 1 )
+  Aols <- coefficients(lm1)
+  
+  #epshat contains the residuals of the predictive regression
+  epshat <- matrix( residuals(lm1) )
+  
+  Rn <- matrix(0, f, f)
+  for (i in 1:f)
+  {
+    Rn[i, i] <- lm( x.t.w[, i] ~ 0 + x.lag.w[, i] )$coefficients
+  }
+  
+  # autoregressive residual estimation 
+  u <- x.t.w - x.lag.w %*% Rn
+  
+  # residuals' correlation matrix
+  corrmat   <- cor(cbind(epshat, u))
+  
+  # covariance matrix estimation 
+  covepshat <- crossprod(epshat) / nn
+  covu      <- matrix(0, f, f)
+  
+  for (i in 1:nn)
+  {
+    covu <- covu + crossprod(u[i, , drop = FALSE])
+  }
+  
+  covu    <- covu / nn
+  covuhat <- matrix(0, 1, f)
+  
+  for (i in 1:f) 
+  {
+    covuhat[, i] <- sum(epshat * u[, i])
+  }
+  
+  covuhat <- t(covuhat) / nn
+  m       <- floor(nn^(1 / 3)) # bandwith parameter
+  uu      <- matrix(0, f, f)
+  
+  for (i in 1:m) 
+  {
+    a <- matrix(0, f, f)
+    for (j in (i + 1):nn) 
+    {
+      a <- a + t(u[j, , drop = F]) %*% u[j - i, , drop = F]
+    }
+    uu <- uu + (1 - i / (m + 1)) * a
+  }
+  uu <- uu / nn
+  
+  # Estimation of the Omegauu matrix 
+  Omegauu <- covu + uu + t(uu)
+  
+  q <- matrix(0, m, f)
+  for (i in 1:m) 
+  {
+    p <- matrix(0, nn - i, f)
+    
+    for (j in (i + 1):nn)
+    {
+      p[j - i, ] <- u[j, , drop = F] * epshat[j - i] # epshat should be transposed
+    }
+    q[i, ] <- (1 - i / (1 + m)) * colSums(p)
+  }
+  residue <- apply(q, 2, sum) / nn
+  Omegaeu <- covuhat + residue # resideue should be transposed
+  
+  # instrument construction
+  h <- 1
+  n      <- nn - h + 1
+  Rz     <- (1 - 1 / (nn^0.95)) * diag(f)
+  diffx  <- x.t.w - x.lag.w
+  z      <- matrix(0, nn, f)
+  z[1, ] <- diffx[1, ]
+  
+  for (i in 2:nn) 
+  {
+    z[i, ] <- z[i - 1, ] %*% Rz + diffx[i, ]
+  }
+  
+  Z  <- rbind(matrix(0, 1, f), z[1:(n - 1),  , drop = F])
+  zz <- rbind(matrix(0, 1, f), z[1:(nn - 1), , drop = F])
+  ZK <- matrix(0, n, f)
+  
+  # for computations below we just use the notation n for the sample size 
+  for (i in 1:n) 
+  {
+    ZK[i, ] <- colSums(zz[i:(i + h - 1), , drop = F])
+  }
+  
+  yy <- matrix(0, n, 1)
+  # Practically yy and y.t are the same since h=1 
+  for (i in 1:n)
+  {
+    yy[i] <- sum(y.t.w[i:(i + h - 1), drop = F])
+  }
+  
+  # Practically x.lag and xk.lag are the same since h=1 
+  xK <- matrix(0, n, f)
+  for (i in 1:n)
+  {
+    xK[i, ] <- colSums(x.lag.w[i:(i + h - 1), , drop = F])
+  }
+  
+  meanxK <- colMeans(xK)
+  Yt     <- yy - mean(yy)
+  Xt     <- matrix(0, n, f)
+  
+  for (i in 1:f)
+  {
+    Xt[, i] <- xK[, i, drop = F] - meanxK[i] * matrix(1, n, 1)
+  }
+  
+  # Computation of the Aivx matrix 
+  Aivx     <- t(Yt) %*% Z %*% pracma::pinv(t(Xt) %*% Z)
+  
+  xK.t <- matrix(0, n, f)
+  for (i in 1:n)
+  {
+    xK.t[i, ] <- colSums(x.t.w[i:(i + h - 1), , drop = F])
+  }
+  
+  meanxKplus1 <- colMeans(xK.t)
+  Xtplus1     <- matrix(0, n, f)
+  
+  for (i in 1:f)
+  {
+    Xtplus1[, i] <- xK.t[, i, drop = F] - meanxKplus1[i] * matrix(1, n, 1)
+  }
+  
+  forecast    <- Aivx%*%( as.matrix( Xtplus1[nn, ]) ) 
+  Yt.new      <- rbind ( Yt, forecast )
+  Yt.new.mean <- mean( Yt.new )
+  yy.forecast <- Yt.new + Yt.new.mean
+  
+  nrows      <- NROW( yy.forecast )
+  y.forecast <- as.numeric( yy.forecast[nrows ,1] )
+  
+  return( y.forecast )
+  
+}#end of function
 
 ```
 
