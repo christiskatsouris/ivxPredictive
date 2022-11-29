@@ -4,12 +4,12 @@
 
 # Script name: supWaldIVX_FRB.R
 
-# Program aim: This R program implements the sup Wald IVX test for structural break detection 
+# Program aim: This R program implements the ssupWaldIVX-FRB test for structural break detection 
 # on the slopes of a linear predictive regression model.  
 
 # written by: 
 
-# Christis G. Katsouris (May 2021)
+# Christis G. Katsouris (June 2021)
 # Department of Economics
 # University of Southampton
 # Southampton, United Kingdom
@@ -35,15 +35,15 @@ library(doParallel)
 library(MASS)
 library(foreach)
 
+#######################
+
 options(digits=12) 
 no_cores=4
 cl = makeCluster(no_cores)       
 
 registerDoParallel(cores=4)
 
-
 ### Date: 7 June 2021 ### 
-
 ################################################################################################
 ### Function 1: Fixed Regressor Bootstrap under the null hypothesis of no parameter instability
 ################################################################################################
