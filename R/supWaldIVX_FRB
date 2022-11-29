@@ -109,7 +109,7 @@ simulate_data_null_function <- function( N = N )
 
 #######################################################################################
 # Example
-###################
+#############################################
 
 N     <- 250
 M     <- 100
@@ -169,12 +169,9 @@ output <- foreach ( j = 1:10 , .combine = 'c' ) %do%
     
   }# end dopar
 
-
 bootstrap.IVX.statistic <- as.matrix( sort(  bootstrap.Wald.IVX.matrix) )
 boot.IVX.statistic      <- bootstrap.IVX.statistic[(0.95*B),1]
 sup_Wald_IVX_matrix_bootstrap[i ,1] <- boot.IVX.statistic 
-
-
 
 ######################################################################################
 
@@ -182,7 +179,6 @@ sup_Wald_IVX_matrix_bootstrap[i ,1] <- boot.IVX.statistic
 #######################################################################################
 ### Function 2: Estimate Wald IVX statistic 
 ########################################################################################
-
 
 estimation_Wald_IVX_function <- function( Y = Y, X = X, pi0 = pi0  )
 {
@@ -386,3 +382,135 @@ estimation_Wald_IVX_function <- function( Y = Y, X = X, pi0 = pi0  )
 }# end of function
 
 ######################################################################################
+
+########################################################################################
+### Function 3: Monte Carlo Simulation step (run 1)
+########################################################################################
+
+set.seed(123456)
+
+start_time <- Sys.time()
+
+M     <- 10
+B     <- 100
+beta1 <- 0.25
+beta2 <- 0.50
+c1    <- 1
+c2    <- 5
+cz    <- 1
+gamma.x   <- 1
+delta     <- 0.95 
+
+pi0    <- 0.15
+rho    <- 0.9
+
+N_values <- c(100,250,500 )
+N_values <- as.matrix( N_values )
+length   <- NROW( N_values )
+
+simulations_matrix           <- matrix(0, nrow = (M+1), ncol = length )
+simulations_matrix_bootstrap <- matrix(0, nrow = M, ncol = length )
+
+for ( i in 1:length )
+{# begin of different N simulation
+  
+  N_size <- N_values[i,1]
+  
+  sup_Wald_IVX_matrix            <- matrix( 0, nrow = M, ncol = 1)
+  sup_Wald_IVX_matrix_bootstrap  <- matrix( 0, nrow = M, ncol = 1)
+  sup_Wald_IVX_statistic <- 0
+  empirical_size <- 0
+  DGP_simulation <- 0
+  Y_sim   <- 0 
+  X_sim   <- 0
+  Xlag_sim <- 0
+  count    <- 0
+  
+  for ( j in 1:M )
+  {# begin of MC replication step
+    
+    # Step 1: Simulate a DGP using Function 1
+    # Single regressor model
+    DGP_simulation <- simulate_data_null_function( N = N_size, beta1 = beta1, beta2 = beta2, c1 = c1, c2 = c2, rho = rho)
+    
+    Y   <- as.matrix( DGP_simulation$y )
+    X   <- as.matrix( DGP_simulation$x )
+    
+    Nc   <- nrow(Y)
+    Xt   <- as.matrix( X[2:Nc, ] )
+    Xlag <- as.matrix( X[1:(Nc-1), ] )
+    Yt   <- as.matrix( Y[2:Nc, ] )
+    
+    # Step 2: Estimate sup-Wald OLS statistic using Function 2B
+    sup_Wald_IVX <- sup_Wald_IVX_function( Yt = Yt, Xt = Xt, Xlag = Xlag, delta = delta, cz = cz, pi0 = pi0 )
+    sup_Wald_IVX_matrix[j ,1] <- as.numeric( sup_Wald_IVX )
+    
+    ##################################################
+    # Step : Estimate bootstrap sup-Wald IVX statistic 
+    ##################################################
+    
+    n <- NROW(Xt)
+    y.t.star.matrix <- matrix( 0, nrow = n, ncol = B )
+    
+    for ( b in 1:B )
+    {
+      model1     <- lm( Yt  ~ Xlag - 1) 
+      u.hat      <- as.matrix( as.vector( residuals( model1 ) ) )
+      kappa.t    <- as.matrix( rnorm( n, 0 , 1 ) )
+      u.hat.star <- u.hat * kappa.t
+      y.t.star.matrix[ ,b] <- as.matrix( u.hat.star ) 
+    }
+    
+    bootstrap.Wald.IVX.matrix <- matrix( 0, nrow = B, ncol = 1 )
+    
+    output <- foreach ( k = 1:B , .combine = 'c' ) %do% 
+      {
+        y.t <- y.t.star.matrix[ ,k]  
+        estimation.Wald.IVX.function       <- sup_Wald_IVX_function( Yt = y.t, Xt = Xt, Xlag = Xlag, delta = delta, cz = cz, pi0 = pi0 ) 
+        sup.Wald.IVX.statistic             <- as.numeric( estimation.Wald.IVX.function )
+        bootstrap.Wald.IVX.matrix[k , 1]   <- sup.Wald.IVX.statistic
+        return( bootstrap.Wald.IVX.matrix ) 
+      }# end dopar
+    
+    bootstrap.IVX.statistic <- as.matrix( sort(  bootstrap.Wald.IVX.matrix) )
+    boot.IVX.statistic      <- bootstrap.IVX.statistic[(0.95*B),1]
+    sup_Wald_IVX_matrix_bootstrap[j ,1] <- boot.IVX.statistic 
+    
+    
+    if (  sup_Wald_IVX_statistic  > boot.IVX.statistic )
+    {
+      empirical_size  <-  ( empirical_size + 1 ) 
+    }
+    
+    DGP_simulation <- 0
+    y.t   <- 0 
+    x.t   <- 0
+    x.lag <- 0
+    bootstrap.IVX.statistic     <- 0
+    original.Wald.IVX.statistic <- 0
+    
+  }# end of MC replication step
+  
+  simulations_matrix[(1:M), i] <- sup_Wald_IVX_matrix
+  simulations_matrix[(M+1), i] <- empirical_size
+  
+  simulations_matrix_bootstrap[ ,i] <- sup_Wald_IVX_matrix_bootstrap
+  
+}# end of different N simulation
+
+end_time <- Sys.time()
+end_time - start_time
+
+########################################################################################
+
+name   <- paste("null_ivx_c_1_c_5 rho_09_cz1_delta095_pi015_B100_M10", sep="")
+file   <- paste( as.character(name), ".csv", sep="" )
+write.csv( simulations_matrix, file = paste( as.character(name),".csv", sep="" ), row.names=FALSE )
+
+
+name   <- paste("null_ivx_c_1_c_5 rho_09_cz1_delta095_pi015_B100_M10_boot_dist", sep="")
+file   <- paste( as.character(name), ".csv", sep="" )
+write.csv( simulations_matrix_bootstrap, file = paste( as.character(name),".csv", sep="" ), row.names=FALSE )
+
+########################################################################################
+
