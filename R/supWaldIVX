@@ -1,1 +1,15 @@
+###########################################
+# R Script Details:
+###########################################
 
+# Script name: supWaldIVX.R
+
+# Program aim: This R program implements the sup Wald IVX test for structural break detection 
+# on the slopes of a linear predictive regression model.  
+
+# written by: 
+
+# Christis G. Katsouris (May 2021)
+# Department of Economics
+# University of Southampton
+# Southampton, United Kingdom
