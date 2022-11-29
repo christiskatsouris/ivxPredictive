@@ -13,3 +13,67 @@
 # Department of Economics
 # University of Southampton
 # Southampton, United Kingdom
+
+#################################################################################################################
+### Function 1: Simulate data pair (X,Y) under the null hypothesis of no breaks
+#################################################################################################################
+
+simulate_data_null_function <- function( N = N_size, beta1=beta1, beta2=beta2, c1=c1, c2=c2, rho = rho, gamma.x = gamma.x )
+{# begin of function
+  
+  N   <- N_size
+  pi0 <- pi0
+  # Here we only check the model without intercept
+  beta1   <- beta1
+  beta2   <- beta2
+  c1      <- c1
+  c2      <- c2
+  rho     <- rho
+  gamma.x <- gamma.x
+  
+  p   <- 2
+  mu.vector <- matrix(0, nrow = p+1, ncol = 1 ) 
+  Sigma     <- matrix(0, nrow = p+1, ncol = p+1 )
+  
+  sigma_v1v2 <- (rho)*sqrt(1)*sqrt(1)
+  
+  Sigma[1,1] <- 1
+  Sigma[1,2] <- 0.10
+  Sigma[1,3] <- -0.29  
+  Sigma[2,1] <- 0.10
+  Sigma[2,2] <- 1
+  Sigma[2,3] <- sigma_v1v2
+  Sigma[3,1] <- -0.29
+  Sigma[3,2] <- sigma_v1v2
+  Sigma[3,3] <- 1
+  
+  # generate random error sequence from Multivariate Normal Distribution
+  innov.e  <- rmvnorm( n = N, mean = mu.vector, sigma = Sigma ) 
+  innov.u  <- as.matrix( innov.e[ ,1] )
+  innov.v  <- as.matrix( innov.e[ ,2:3] )
+  
+  C      <- diag(p)
+  C[1,1] <- c1
+  C[2,2] <- c2
+  
+  Rn <- diag(p) - C/(N^gamma.x)
+  x  <- matrix(0,N,p)
+  
+  for (j in 1:p)
+  {
+    for(t in 2:N) 
+    {  
+      x[t,j] <- Rn[j,j]*x[t-1,j] + innov.v[t,j]
+    }
+  }
+  
+  y <- matrix(0, nrow = N, ncol = 1)
+  for (t in 2:N)
+  {
+    y[t,1] <- as.numeric(beta1)*x[t-1,1] + as.numeric(beta2)*x[t-1,2] + innov.u[t,1]
+  }
+  
+  simulated.data <- structure( list( y = y, x  = x ) ) 
+  return( simulated.data )
+  
+}# end of function
