@@ -441,6 +441,7 @@ ivx_forecast <- function( y.t.w = y.t.window, x.t.w = x.t.window, x.lag.w = x.la
 - Rao, M. M. (1961). Consistency and limit distributions of estimators of parameters in explosive stochastic difference equations. The Annals of Mathematical Statistics, 32(1), 195-218.
 - Rao, M. M. (1966). Inference in stochastic processes. II. Zeitschrift für Wahrscheinlichkeitstheorie und Verwandte Gebiete, 5(4), 317-335.
 - Hee, O. (1966). Tests for Predictability of Statistical Models. Journal of Farm Economics, 48(5), 1479-1484.
+- Priestley, M. B., & Rao, T. S. (1969). A test for non‐stationarity of time‐series. Journal of the Royal Statistical Society: Series B (Methodological), 31(1), 140-149.
 
 ### 1970's
 
