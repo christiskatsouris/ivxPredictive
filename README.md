@@ -149,7 +149,7 @@ Firstly, we consider estimation procedure for the original IVX instrumentation o
 
 ### Example 4: (Demeaning of variables)
 
-An important aspect which affects both the asymptotic theory of estimators as well as empirical results is the inclusion of model intercept in the specification form of the nonstationary predictive regression system. 
+An important aspect which affects both the asymptotic theory of estimators as well as empirical results is the inclusion of model intercept in the specification form of the nonstationary predictive regression system. In particular, the IVX estimator is found to be invariant to whether the constructed instrument $z_{t-1}$ is demeaned or not, which can be easily seen by considering the corresponding asymptotic terms.  
 
 ```R
 
