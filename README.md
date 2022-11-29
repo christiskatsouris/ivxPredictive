@@ -176,7 +176,7 @@ library(exuber)
 
 ### Illustrative Example 2  
 
-We begin with an example of the naive estimation of the quantile autoregressive model when the underline stochastic process has a mildly explosive or explosive behaviour but a stationary quantile autoregressive model is fitted to the data. This example, illustrates exactly that usefulness of developing a unified framework that ensures robust inference regardless the persistence properties of the time series. Although, the estimates below are likley to be biased, these large values of model estimates demonstrate the importance of the proposed IVX-estimator which takes into account such explosive stochastic behaviour and ensures that both empirical as well as asymptotic theory results are valid. 
+We begin with an example of the naive estimation of the quantile autoregressive model when the underline stochastic process has a mildly explosive or explosive behaviour but a stationary quantile autoregressive model is fitted to the data. This example, illustrates exactly that usefulness of developing a unified framework that ensures robust inference regardless the persistence properties of the time series. Although, the estimates below are likley to be biased, these large values of model estimates demonstrate the importance of the proposed IVX-P estimator which takes into account such explosive stochastic behaviour and ensures that both empirical as well as asymptotic theory results are valid. 
 
 ```R
 mydata      <- read.table("crypto.txt", header = TRUE)
