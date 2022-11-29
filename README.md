@@ -151,6 +151,8 @@ Firstly, we consider estimation procedure for the original IVX instrumentation o
 
 An important aspect which affects both the asymptotic theory of estimators as well as empirical results is the inclusion of model intercept in the specification form of the nonstationary predictive regression system. In particular, the IVX estimator is found to be invariant to whether the constructed instrument $z_{t-1}$ is demeaned or not, which can be easily seen by considering the corresponding asymptotic terms.  
 
+However, the presence of a non-zero model interecept has an impact on the limiting distribution of test statistics and estimators, thus a commonly used approach is to consider the case of a constant versus a zero intercept separately. 
+
 ```R
 
 
