@@ -1,0 +1,603 @@
+###########################################
+# R Script Details:
+###########################################
+
+# Script name: supWaldIVX_FRB.R
+
+# Program aim: This R program implements the sup Wald IVX test for structural break detection 
+# on the slopes of a linear predictive regression model.  
+
+# written by: 
+
+# Christis G. Katsouris (May 2021)
+# Department of Economics
+# University of Southampton
+# Southampton, United Kingdom
+
+############################################################################
+### REQUIRED PACKAGES
+############################################################################
+
+library(quantreg)
+library(Matrix)
+library(matlib)
+library(matrixcalc)
+library(pracma)
+
+library(GA)
+library(igraph)
+library(nnet)
+library(mvtnorm)
+library(vars)
+
+library(parallel)
+library(doParallel)
+library(MASS)
+library(foreach)
+
+options(digits=12) 
+no_cores=4
+cl = makeCluster(no_cores)       
+
+registerDoParallel(cores=4)
+
+
+### Date: 7 June 2021 ### 
+
+################################################################################################
+### Function 1: Fixed Regressor Bootstrap under the null hypothesis of no parameter instability
+################################################################################################
+
+simulate_data_null_function <- function( N = N )
+{# begin of function
+    
+  N   <- N
+  p   <- 2
+  pi0 <- pi0
+  # Here we only check the model without intercept
+  beta1   = beta1
+  beta2   = beta2
+  c1      = c1
+  c2      = c2
+  rho_vv  = rho_vv
+ 
+  mu.vector <- matrix(0, nrow = p+1, ncol = 1 ) 
+  Sigma     <- matrix(0, nrow = p+1, ncol = p+1 )
+  
+  sigma_v1v2 <- (rho_vv)*sqrt(1)*sqrt(1)
+  
+  Sigma[1,1] <- 1
+  Sigma[1,2] <- 0.10
+  Sigma[1,3] <- -0.29  
+  Sigma[2,1] <- 0.10
+  Sigma[2,2] <- 1
+  Sigma[2,3] <- sigma_v1v2
+  Sigma[3,1] <- -0.29
+  Sigma[3,2] <- sigma_v1v2
+  Sigma[3,3] <- 1
+  
+  # generate random error sequence from Multivariate Normal Distribution
+  innov.e  <- rmvnorm( n = N, mean = mu.vector, sigma = Sigma ) 
+  innov.u  <- as.matrix( innov.e[ ,1] )
+  innov.v  <- as.matrix( innov.e[ ,2:3] )
+  
+  C      <- diag(p)
+  C[1,1] <- c1
+  C[2,2] <- c2
+  
+  Rn <- diag(p) - C/(N^gamma.x)
+  x  <- matrix(0,N,p)
+  
+  for (j in 1:p)
+  {
+    for(t in 2:N) 
+    {  
+      x[t,j] <- Rn[j,j]*x[t-1,j] + innov.v[t,j]
+    }
+  }
+  
+  y <- matrix(0, nrow = N, ncol = 1)
+  for (t in 2:N)
+  {
+    y[t,1] <- as.numeric(beta1)*x[t-1,1] + as.numeric(beta2)*x[t-1,2] + innov.u[t,1]
+  }
+  
+  simulated.data <- structure( list( y = y, x  = x ) ) 
+  return( simulated.data )
+  
+}# end of function
+
+#######################################################################################
+
+
+N     <- 250
+M     <- 100
+beta1 <- 0.25
+beta2 <- 0.50
+c1    <- 1
+c2    <- 5
+cz    <- 10
+gamma.x   <- 0.65
+delta     <- 0.95 
+
+pi0    <- 0.15
+rho_vv <- 0.9
+
+
+DGP_simulation <- simulate_data_null_function( N = N  )
+
+Y   <- DGP_simulation$y
+X   <- DGP_simulation$x
+N   <- nrow(Y)
+
+Xt    <- as.matrix( X[2:N, ] )
+Xlag  <- as.matrix( X[1:(N-1), ] )
+Yt    <- as.matrix( Y[2:N, ] )
+
+#Xlag <- DGP_simulation$Xlag
+n <- NROW(Xt)
+
+B <- 10
+y.t.star.matrix <- matrix( 0, nrow = n, ncol = B )
+
+for ( b in 1:B )
+{
+  
+  model1     <- lm( Yt  ~ Xlag - 1) 
+  u.hat      <- as.matrix( as.vector( residuals( model1 )) )
+  kappa.t    <- as.matrix( rnorm( n, 0 , 1 ) )
+  u.hat.star <- u.hat * kappa.t
+  y.t.star.matrix[ ,b] <- as.matrix( u.hat.star ) 
+  
+}
+
+#######################################################################################
+
+
+########################################################################################
+### Function 2: Estimate Wald IVX statistic 
+########################################################################################
+
+
+estimation_Wald_IVX_function <- function( Yt = Yt, Xt = Xt, Xlag = Xlag, pi0 = pi0  )
+{
+   
+  pi0   <- pi0
+  Yt    <- Yt
+  Xt    <- Xt
+  Xlag  <- Xlag
+  
+  #Xlag  <- as.matrix( x.lag )
+  #Yt    <- as.matrix( y.t )
+  #N     <- nrow(Y)
+  
+  # Insert data
+  #Xt    <- as.matrix( X[2:N, ] )
+  #Xlag  <- as.matrix( X[1:(N-1), ] )
+  #Yt    <- as.matrix( Y[2:N, ] )
+  
+  ####################################################################
+  ## IVX Estimation Step ## 
+  ####################################################################
+  
+  # length size of the time series
+  n <- NROW(Xlag)
+  N <- (n+1)
+  # number of predictors
+  p  <- NCOL(Xlag)
+  h  <- 1
+  
+  rn <- matrix(0, p, p)
+  for (i in 1:p) 
+  {
+    rn[i, i] <- lm(Xt[, i] ~ 0 + Xlag[, i])$coefficients
+  }
+  
+  # autoregressive residual estimation
+  u.hat <- Xt - Xlag %*% rn
+  
+  # Rz assigns a common mildly integrated root to all regressors 
+  Cz      <- diag(p)
+  Cz[1,1] <- cz
+  Cz[2,2] <- cz
+  
+  Rz <- ( diag(p) - Cz / ( N^delta ) ) 
+  
+  zt      <- matrix(0, n, p)
+  zt[1, ] <- Xlag[1, ]
+  
+  diff <-  Xt -  Xlag
+  
+  for (t in 2:n) 
+  {
+    zt[t, ] <- Rz %*% zt[t - 1, ] + ( diff[t ,] )
+  }
+  
+  # bandwith parameter
+  m  <- floor( N^(1 / 3) ) 
+  
+  ## Use the above estimated Xt, Zt and Yt to construct the Wald IVX statistic
+  sup_Wald_IVX <- 0
+  
+  # Step 1: Estimate OLS regression
+  n <- NROW(Xlag)
+  # number of predictors
+  p <- NCOL(Xlag)
+  
+  # Step 2: Estimate the Wald IVX statistic
+  k_seq <- as.matrix( floor(pi0 * N):(N - floor(pi0 * N) ) )
+  dim   <- nrow( k_seq )    
+  
+  ones            <- matrix( 1, nrow = n, ncol = 1 )
+  Wald_IVX_vector <- matrix( 0, nrow = dim, ncol = 1 )
+  
+  for (s in 1:dim)
+  {# begin of for-loop
+    
+    k <- k_seq[ s,1 ]
+    
+    ###################################################################
+    # Step 1: Obtain the estimate of the variance of OLS regression 
+    ###################################################################
+    
+    Xlag1 <- as.matrix( Xlag )
+    for (i in (k+1): n)
+    {
+      Xlag1[i, ] <- 0 
+    }
+    
+    Xlag2 <- as.matrix( Xlag )
+    for (i in 1: k)
+    {
+      Xlag2[i, ] <- 0 
+    }
+    
+    regressors <- cbind( Xlag1, Xlag2 )
+    regressors <- as.matrix( regressors )
+    
+    model_OLS       <- lm( Yt ~ regressors - 1 )
+    epsilon_hat     <- matrix( residuals( model_OLS ) )
+    cov_epsilon_hat <- as.numeric( crossprod( epsilon_hat ) / n )
+    
+    ###################################################################
+    # Step 2: Obtain the estimates of the IVX estimators
+    ###################################################################
+    
+    # Estimate the Z1 and Z2 matrices corresponding to before and after the structural break
+    Zt <- as.matrix( zt )
+    
+    Z1 <- as.matrix( Zt )
+    for (i in (k+1): n)
+    {
+      Z1[i, ] <- 0 
+    }
+    
+    Z2 <- as.matrix( Zt )
+    for (i in 1: k)
+    {
+      Z2[i, ] <- 0 
+    }
+    
+    B1_hat_ivx    <- ( t( Yt ) %*% (Z1) ) %*% ( pracma::pinv( t(Xlag1) %*% Z1 ) )
+    B2_hat_ivx    <- ( t( Yt ) %*% (Z2) ) %*% ( pracma::pinv( t(Xlag2) %*% Z2 ) )
+    
+    Bivx_distance <- as.matrix( B2_hat_ivx  - B1_hat_ivx )
+    
+    ##########################################################################
+    # Covariance matrix estimation
+    
+    Sigma.uu  <- matrix(0, p, p)
+    
+    for (i in 1:n)
+    {
+      Sigma.uu <- Sigma.uu + crossprod( u.hat[i, , drop = FALSE] )
+    }
+    
+    Sigma.uu   <- Sigma.uu / n
+    Sigma.ue   <- matrix(0, 1, p)
+    
+    for (i in 1:p) 
+    {
+      Sigma.ue[, i] <- sum( epsilon_hat * u.hat[, i] )
+    }
+    
+    Sigma.ue  <- t( Sigma.ue ) / n
+    # bandwith parameter
+    m         <- floor( n^(1 / 3) ) 
+    
+    Lampda.uu <- matrix(0, p, p)
+    
+    for (i in 1:m) 
+    {
+      a <- matrix(0, p, p)
+      for (j in (i + 1):n) 
+      {
+        a <- a + t( u.hat[j, , drop = F]) %*% u.hat[j - i, , drop = F]
+      }
+      Lampda.uu <- Lampda.uu + (1 - i / (m + 1)) * a
+    }
+    
+    Lampda.uu <- Lampda.uu / n
+    
+    # Estimation of the Omegauu matrix 
+    Omega.uu <- Sigma.uu + Lampda.uu + t(Lampda.uu)
+    
+    # Newey-West matrix estimators (Lampda.ue as defined in the paper)
+    q <- matrix(0, m, p)
+    
+    for (i in 1:m) 
+    {
+      r <- matrix(0, n - i, p)
+      
+      for (j in (i + 1):n)
+      {
+        r[j - i, ] <- u.hat[j, , drop = F] * epsilon_hat[j - i] 
+      }
+      q[i, ] <- (1 - i / (1 + m)) * colSums(r)
+    }
+    
+    # residue finds the column average of the q matrix
+    residue  <- apply(q, 2, sum) / n
+    Omega.ue <- Sigma.ue + as.matrix(residue) 
+    sigma_FM <- cov_epsilon_hat - t(Omega.ue)%*% ( pracma::pinv(Omega.uu) ) %*% (Omega.ue)
+    
+    ##########################################################################
+    
+    # Estimate Q1 matrix 
+    Z1.mean <- colMeans( as.matrix( Z1[1:k, ] ) )
+    M1      <- crossprod( Z1 )* cov_epsilon_hat - kronecker( k * tcrossprod( Z1.mean ) , sigma_FM )
+    Q_matrix_part1 <- ( pinv( t(Z1)%*%Xlag1 ) )%*%( M1 )%*%( pinv( t(Xlag1)%*%Z1 ) )
+    
+    # Estimate Q2 matrix 
+    Z2.mean <- colMeans( as.matrix( Z2[(k+1):n, ] ) )
+    M2      <- crossprod( Z2 )* cov_epsilon_hat - kronecker( (n - k) * tcrossprod( Z2.mean ) , sigma_FM )
+    Q_matrix_part2 <- ( pinv( t(Z2)%*%Xlag2 ) )%*%( M2 )%*%( pinv( t(Xlag2)%*%Z2 ) )
+    
+    Q_matrix           <- ( Q_matrix_part1 + Q_matrix_part2 )
+    Wald_IVX_statistic <- ( Bivx_distance )%*%( pracma::pinv( Q_matrix ) )%*%t( Bivx_distance ) 
+    
+    Wald_IVX_vector[s,1] <- Wald_IVX_statistic 
+    
+  }# end of for-loop
+  
+  # Obtain the sup-Wald statistic
+  sup_Wald_IVX <- max( Wald_IVX_vector  )
+  
+  return( data.frame(sup_Wald_IVX)  )
+  
+}# end of function
+
+
+######################################################################################
+
+bootstrap.Wald.IVX.matrix <- matrix( 0, nrow = B, ncol = 1 )
+
+output <- foreach ( j = 1:10 , .combine = 'c' ) %do% 
+  {
+    
+    y.t <- y.t.star.matrix[ ,j]  
+    estimation.Wald.IVX.function       <- estimation_Wald_IVX_function( Yt = y.t, Xt = Xt, Xlag = Xlag, pi0 = 0.15 ) 
+    sup.Wald.IVX.statistic             <- as.numeric( estimation.Wald.IVX.function )
+    bootstrap.Wald.IVX.matrix[j , 1]   <- sup.Wald.IVX.statistic
+    
+    return( bootstrap.Wald.IVX.matrix ) 
+    
+  }# end dopar
+
+
+bootstrap.IVX.statistic <- as.matrix( sort(  bootstrap.Wald.IVX.matrix) )
+boot.IVX.statistic      <- bootstrap.IVX.statistic[(0.95*B),1]
+sup_Wald_IVX_matrix_bootstrap[i ,1] <- boot.IVX.statistic 
+
+
+
+######################################################################################
+
+
+#######################################################################################
+### Function 2: Estimate Wald IVX statistic 
+########################################################################################
+
+
+estimation_Wald_IVX_function <- function( Y = Y, X = X, pi0 = pi0  )
+{
+  
+  pi0 <- pi0
+  Y   <- as.matrix( Y )
+  X   <- as.matrix( X )
+  N   <- nrow(Y)
+  
+  # Insert data
+  Xt    <- as.matrix( X[2:N, ] )
+  Xlag  <- as.matrix( X[1:(N-1), ] )
+  Yt    <- as.matrix( Y[2:N, ] )
+  
+  ####################################################################
+  ## IVX Estimation Step ## 
+  ####################################################################
+  
+  # length size of the time series
+  n <- NROW(Xlag)
+  # number of predictors
+  p  <- NCOL(Xlag)
+  h  <- 1
+  
+  rn <- matrix(0, p, p)
+  for (i in 1:p) 
+  {
+    rn[i, i] <- lm(Xt[, i] ~ 0 + Xlag[, i])$coefficients
+  }
+  
+  # autoregressive residual estimation
+  u.hat <- Xt - Xlag %*% rn
+  
+  # Rz assigns a common mildly integrated root to all regressors 
+  Cz      <- diag(p)
+  Cz[1,1] <- cz
+  Cz[2,2] <- cz
+  
+  Rz <- ( diag(p) - Cz / ( N^delta ) ) 
+  
+  z      <- matrix(0, N, p)
+  z[1, ] <- X[1, ]
+  
+  for (t in 2:N) 
+  {
+    z[t, ] <- Rz %*% z[t - 1, ] + ( X[t, ] - X[t-1, ] )
+  }
+  
+  # bandwith parameter
+  m  <- floor( N^(1 / 3) ) 
+  
+  ## Use the above estimated Xt, Zt and Yt to construct the Wald IVX statistic
+  sup_Wald_IVX <- 0
+  
+  # Step 1: Estimate OLS regression
+  n <- NROW(Xlag)
+  # number of predictors
+  p <- NCOL(Xlag)
+  
+  # Step 2: Estimate the Wald IVX statistic
+  k_seq <- as.matrix( floor(pi0 * N):(N - floor(pi0 * N) ) )
+  dim   <- nrow( k_seq )    
+  
+  ones            <- matrix( 1, nrow = n, ncol = 1 )
+  Wald_IVX_vector <- matrix( 0, nrow = dim, ncol = 1 )
+  
+  for (s in 1:dim)
+  {# begin of for-loop
+    
+    k <- k_seq[ s,1 ]
+    
+    ###################################################################
+    # Step 1: Obtain the estimate of the variance of OLS regression 
+    ###################################################################
+    
+    Xlag1 <- as.matrix( Xlag )
+    for (i in (k+1): n)
+    {
+      Xlag1[i, ] <- 0 
+    }
+    
+    Xlag2 <- as.matrix( Xlag )
+    for (i in 1: k)
+    {
+      Xlag2[i, ] <- 0 
+    }
+    
+    regressors <- cbind( Xlag1, Xlag2 )
+    regressors <- as.matrix( regressors )
+    
+    model_OLS       <- lm( Yt ~ regressors - 1 )
+    epsilon_hat     <- matrix( residuals( model_OLS ) )
+    cov_epsilon_hat <- as.numeric( crossprod( epsilon_hat ) / n )
+    
+    ###################################################################
+    # Step 2: Obtain the estimates of the IVX estimators
+    ###################################################################
+    
+    # Estimate the Z1 and Z2 matrices corresponding to before and after the structural break
+    Zt <- as.matrix( z[1:(N-1), ] )
+    
+    Z1 <- as.matrix( Zt )
+    for (i in (k+1): n)
+    {
+      Z1[i, ] <- 0 
+    }
+    
+    Z2 <- as.matrix( Zt )
+    for (i in 1: k)
+    {
+      Z2[i, ] <- 0 
+    }
+    
+    B1_hat_ivx    <- ( t( Yt ) %*% (Z1) ) %*% ( pracma::pinv( t(Xlag1) %*% Z1 ) )
+    B2_hat_ivx    <- ( t( Yt ) %*% (Z2) ) %*% ( pracma::pinv( t(Xlag2) %*% Z2 ) )
+    
+    Bivx_distance <- as.matrix( B2_hat_ivx  - B1_hat_ivx )
+    
+    ##########################################################################
+    # Covariance matrix estimation
+    
+    Sigma.uu  <- matrix(0, p, p)
+    
+    for (i in 1:n)
+    {
+      Sigma.uu <- Sigma.uu + crossprod( u.hat[i, , drop = FALSE] )
+    }
+    
+    Sigma.uu   <- Sigma.uu / n
+    Sigma.ue   <- matrix(0, 1, p)
+    
+    for (i in 1:p) 
+    {
+      Sigma.ue[, i] <- sum( epsilon_hat * u.hat[, i] )
+    }
+    
+    Sigma.ue  <- t( Sigma.ue ) / n
+    # bandwith parameter
+    m         <- floor( n^(1 / 3) ) 
+    
+    Lampda.uu <- matrix(0, p, p)
+    
+    for (i in 1:m) 
+    {
+      a <- matrix(0, p, p)
+      for (j in (i + 1):n) 
+      {
+        a <- a + t( u.hat[j, , drop = F]) %*% u.hat[j - i, , drop = F]
+      }
+      Lampda.uu <- Lampda.uu + (1 - i / (m + 1)) * a
+    }
+    
+    Lampda.uu <- Lampda.uu / n
+    
+    # Estimation of the Omegauu matrix 
+    Omega.uu <- Sigma.uu + Lampda.uu + t(Lampda.uu)
+    
+    # Newey-West matrix estimators (Lampda.ue as defined in the paper)
+    q <- matrix(0, m, p)
+    
+    for (i in 1:m) 
+    {
+      r <- matrix(0, n - i, p)
+      
+      for (j in (i + 1):n)
+      {
+        r[j - i, ] <- u.hat[j, , drop = F] * epsilon_hat[j - i] 
+      }
+      q[i, ] <- (1 - i / (1 + m)) * colSums(r)
+    }
+    
+    # residue finds the column average of the q matrix
+    residue  <- apply(q, 2, sum) / n
+    Omega.ue <- Sigma.ue + as.matrix(residue) 
+    sigma_FM <- cov_epsilon_hat - t(Omega.ue)%*% ( pracma::pinv(Omega.uu) ) %*% (Omega.ue)
+    
+    ##########################################################################
+    
+    # Estimate Q1 matrix 
+    Z1.mean <- colMeans( as.matrix( Z1[1:k, ] ) )
+    M1      <- crossprod( Z1 )* cov_epsilon_hat - kronecker( k * tcrossprod( Z1.mean ) , sigma_FM )
+    Q_matrix_part1 <- ( pinv( t(Z1)%*%Xlag1 ) )%*%( M1 )%*%( pinv( t(Xlag1)%*%Z1 ) )
+    
+    # Estimate Q2 matrix 
+    Z2.mean <- colMeans( as.matrix( Z2[(k+1):n, ] ) )
+    M2      <- crossprod( Z2 )* cov_epsilon_hat - kronecker( (n - k) * tcrossprod( Z2.mean ) , sigma_FM )
+    Q_matrix_part2 <- ( pinv( t(Z2)%*%Xlag2 ) )%*%( M2 )%*%( pinv( t(Xlag2)%*%Z2 ) )
+    
+    Q_matrix           <- ( Q_matrix_part1 + Q_matrix_part2 )
+    Wald_IVX_statistic <- ( Bivx_distance )%*%( pracma::pinv( Q_matrix ) )%*%t( Bivx_distance ) 
+    
+    Wald_IVX_vector[s,1] <- Wald_IVX_statistic 
+    
+  }# end of for-loop
+  
+  # Obtain the sup-Wald statistic
+  sup_Wald_IVX <- max( Wald_IVX_vector  )
+  
+  return( data.frame(sup_Wald_IVX)  )
+  
+}# end of function
+
+######################################################################################
