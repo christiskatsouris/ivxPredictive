@@ -151,7 +151,12 @@ Firstly, we consider estimation procedure for the original IVX instrumentation o
 
 An important aspect which affects both the asymptotic theory of estimators as well as empirical results is the inclusion of model intercept in the specification form of the nonstationary predictive regression system. 
 
+```R
 
+
+
+
+```
 
 ### Explosive Behaviour Illustrative Examples:
 
