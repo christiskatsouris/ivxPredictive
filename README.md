@@ -138,7 +138,7 @@ end
 
 Firstly, we consider estimation procedure for the original IVX instrumentation of [Phillips and Magdalinos (2009)](https://ideas.repec.org/p/skb/wpaper/cofie-06-2009.html) and [Kostakis, Magdalinos and Stamatogiannis (2015)](https://academic.oup.com/rfs/article/28/5/1506/1867633?login=true) and discuss the main features. Secondly, we present the estimation procedure of the IVX-P estimator (i.e., the IVX instrumentation that covers the whole spectrum of persistence classes in a unified way) and discuss the main features.  
 
-``` Matlab
+```R
 
 # Estimation of the original IVX instruments 
 
@@ -152,7 +152,7 @@ Firstly, we consider estimation procedure for the original IVX instrumentation o
 
 Notice that various Software packages now exist which can be employed for monitoring time series data for explosive bubbles, although the main aim of developing the R package 'ivxPredictive' is for estimation and inference purposes, we briefly mention some of them here. Specifically, the PWY (2011) and PSY (2015) statistical tests for monitoring explosive behaviour are implemented in MATLAB, R (package ['psymonitor'](https://github.com/itamarcaspi/psymonitor)) as well as in Eviews. Furthermore, the R package ['exuber'](https://github.com/kvasilopoulos/exuber) developed by [Kostas Vasilopoulos](https://github.com/kvasilopoulos) provides the corresponding R implementation while in Stata a coding implementation is discussed by [Baum and Otero, 2021](https://journals.sagepub.com/doi/full/10.1177/1536867X211063405). Lastly, a review on the current literature of testing for explosive bubbles can be also found in this study [literature](https://arxiv.org/abs/2207.08249).    
 
-### Illustrative Example: 
+### Illustrative Example 1  
 
 ```
 // installing the R package exuber
@@ -172,6 +172,47 @@ library(exuber)
 
   gsadf_panel
         2.407
+```
+
+### Illustrative Example 2  
+
+We begin with an example of the naive estimation of the quantile autoregressive model when the underline stochastic process has a mildly explosive or explosive behaviour but a stationary quantile autoregressive model is fitted to the data. This example, illustrates exactly that usefulness of developing a unified framework that ensures robust inference regardless the persistence properties of the time series. Although, the estimates below are likley to be biased, these large values of model estimates demonstrate the usefulness of having an estimator which takes into account such explosive stochastic behaviour from both the empirical as well as the asymptotic theory perspective. 
+
+```R
+mydata      <- read.table("crypto.txt", header = TRUE)
+crypto_data <- as.matrix(mydata)
+
+etherum <- as.matrix( as.vector( crypto_data[ ,2] ) )
+bitcoin <- as.matrix( as.vector( crypto_data[ ,3] ) )
+
+nr    <- nrow( etherum )
+e_t   <- as.matrix( etherum[2:nr,1] )
+e_lag <- as.matrix( etherum[1:(nr-1),1] )
+b_t   <- as.matrix( bitcoin[2:nr,1] )
+b_lag <- as.matrix( bitcoin[1:(nr-1),1] )
+
+model.LM_etherum <- lm( e_t ~ e_lag )
+summary( model.LM_etherum  )
+
+model.LM_bitcoin <- lm( b_t ~ b_lag  )
+summary( model.LM_bitcoin  )
+
+tau <- 0.95
+###### Model 1: Etherum 
+model.QR_etherum <- rq( e_t ~ e_lag, tau = tau )
+model.summary    <- summary( model.QR_etherum , se = "boot", bsmethod= "xy" )
+
+###### Model 2: Bitcoin
+model.QR_etherum <- rq( b_t  ~ b_lag, tau = tau )
+model.summary    <- summary( model.QR_etherum , se = "boot", bsmethod= "xy" )
+```
+
+### Illustrative Example 3 
+
+```R
+
+
+
 ```
 
 ## Application II: Forecasting
