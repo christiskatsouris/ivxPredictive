@@ -1,0 +1,87 @@
+#####################################################################################################
+# Function borrowed from the R package 'ivx'                                                        #
+#                                                                                                   #
+# Reference: Yang, B., Long, W., Peng, L., & Cai, Z. (2020).                                        #
+# Testing the predictability of US housing price index returns based on an IVX-AR model (IVX-AR).   #
+# Journal of the American Statistical Association, 115(532), 1598-1619.                             #
+#####################################################################################################
+
+
+XY_data=function(n,Pi,beta,phi_1,mu,sigma,psi_1,garch_1,garch_2)
+{# begin-of-function
+
+	uu <- mvrnorm(n=n,mu=mu,Sigma=sigma,empirical = T) # Generating multivariate normal random variables
+ 	u1<-uu[,1]
+ 	u2<-uu[,2]
+ 	u3<-uu[,3]
+ 	u4<-uu[,4]
+
+  # Generate U1 from GARCH(1,1)
+ 	h1<-numeric(n)
+ 	h2<-numeric(n)
+ 	h3<-numeric(n)
+ 	h4<-numeric(n)
+ 	
+  for (k in 2:n)
+  {
+   h1[k]<-garch_1*h1[k-1] + garch_2*(u1[k-1])^2
+    h2[k]<-garch_1*h2[k-1] + garch_2*(u2[k-1])^2
+    h3[k]<-garch_1*h3[k-1] + garch_2*(u3[k-1])^2
+    h4[k]<-garch_1*h4[k-1] + garch_2*(u4[k-1])^2
+	}
+ 	U1<-sqrt(h1)*u1
+ 	U2<-sqrt(h2)*u2
+ 	U3<-sqrt(h3)*u3
+ 	U4<-sqrt(h4)*u4
+ 	U5 <- uu[,5]
+  # End of generating U1 from GARCH(1,1)
+
+  e1=rep(0,n)
+ 	e2=rep(0,n)
+ 	e3=rep(0,n)
+ 	e4=rep(0,n)
+ 	e1[1]=U1[1]
+ 	e2[1]=U2[1]
+ 	e3[1]=U3[1]
+ 	e4[1]=U4[1]
+
+ 	for(t in 2:n)
+  {
+ 	   e1[t]=psi_1[1]*e1[t-1]+U1[t]
+ 	   e2[t]=psi_1[2]*e2[t-1]+U2[t]
+ 	   e3[t]=psi_1[3]*e3[t-1]+U3[t]
+ 	   e4[t]=psi_1[4]*e4[t-1]+U4[t]
+   }
+
+ 	x1=rep(0,n)
+ 	x2=rep(0,n)
+ 	x3=rep(0,n)
+ 	x4=rep(0,n)
+ 	ut=rep(0,n)
+ 	x1[1]=e1[1]
+ 	x2[1]=e2[1]
+ 	x3[1]=e3[1]
+ 	x4[1]=e4[1]
+ 	ut[1]=U5[1]
+
+ 	for(t in 2:n)
+  {
+    x1[t]=Pi[1]*x1[t-1]+e1[t]
+ 	  x2[t]=Pi[2]*x2[t-1]+e2[t]
+ 	  x3[t]=Pi[3]*x3[t-1]+e3[t]
+ 	  x4[t]=Pi[4]*x4[t-1]+e4[t]
+ 	  ut[t]=phi_1*ut[t-1]+U5[t]
+   }
+ 	 y=rep(0,n)
+ 	 for(t in 2:n)
+   {
+  	   y[t]=beta[1]*x1[t-1]+beta[2]*x2[t-1]+beta[3]*x3[t-1]+beta[4]*x4[t-1]+ut[t]
+   }
+
+ 	 XY1=cbind(x1,x2,x3,x4,y)
+   return(XY1)
+   
+}# end-of-function
+
+#####################################################################################################
+#####################################################################################################
